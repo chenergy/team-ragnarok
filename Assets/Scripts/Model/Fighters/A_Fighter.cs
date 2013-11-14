@@ -413,13 +413,16 @@ namespace FightGame
 					
 					this.cur_hp -= damage * 0.25f;
 					//The meter will increase when player's attack is block;
+					//Comment out so that when fighter using block, his meter doesn't increase
+					/*
 					if (this.cur_meter < 100)
 						this.cur_meter = Mathf.Clamp( this.cur_meter + 5, 0, 100 );
 					
 					else{				
 						this.movement = direction * 0.025f;
 					}
-
+					*/
+					this.movement = direction * 0.025f;
 					if (this.cur_hp <= 0){
 						this.cur_hp = 0.0f;
 						this.moveGraph.dispatch("death", this);
@@ -441,7 +444,12 @@ namespace FightGame
 				}
 				
 				A_Fighter enemy = GameManager.GetOpponentPlayer(this.playerNumber).Fighter;
-				enemy.cur_meter = Mathf.Clamp(enemy.cur_meter + 10.0f, 0, 100);
+				if(!enemy.PlayingSpecialAttack()){
+					//only increase meter for opponent when:
+					// 1/ attack landed, either got block or got hit
+					// 2/ the attack is not special attack
+					enemy.cur_meter = Mathf.Clamp(enemy.cur_meter + 10.0f, 0, 100);
+				}
 			}
 			//Debug.Log(this.name + "\n" + "Damage Taken: " + damage + " Current HP: " + this.cur_hp);
 		}
