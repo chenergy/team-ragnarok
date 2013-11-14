@@ -496,6 +496,7 @@ namespace FightGame
 			S_attack.addTransition(T_knockDown,"knockDown");
 			
 			S_takeDamage.addTransition(T_idle,"idle");
+			S_takeDamage.addTransition(T_walk,"walk");
 			S_takeDamage.addTransition(T_takeDamage,"takeDamage");
 			S_takeDamage.addTransition(T_death, "death");
 			S_takeDamage.addTransition(T_knockDown,"knockDown");

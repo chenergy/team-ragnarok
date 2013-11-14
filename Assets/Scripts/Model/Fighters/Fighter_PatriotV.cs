@@ -10,8 +10,8 @@ namespace FightGame
 	{
 		public Fighter_PatriotV (GameObject gobj, int playerNumber) : base (gobj, playerNumber){
 			
-			this.gobj.animation[this.animationNameMap[FighterAnimation.WALK_FORWARD]].speed = 2.0f;
-			this.gobj.animation[this.animationNameMap[FighterAnimation.WALK_BACKWARD]].speed = 2.0f;
+			this.gobj.animation[this.animationNameMap[FighterAnimation.WALK_FORWARD]].speed = 1.25f;
+			this.gobj.animation[this.animationNameMap[FighterAnimation.WALK_BACKWARD]].speed = 1.25f;
 			
 			this.actionsCommandMap = new Dictionary<int, A_Attack>();
 			
