@@ -60,6 +60,9 @@ namespace FightGame
 			character.transform.localScale = localScale;
 			
 			switch (fighter){
+			case "Fighter_PatriotV":
+				this.fighter = new Fighter_PatriotV(character, this.playerNumber);
+				break;	
 			case "Fighter_Odin":
 				this.fighter = new Fighter_Odin(character, this.playerNumber);
 				break;

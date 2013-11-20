@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: 0354531faa84c1145b81603e27ca824b
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: ab_jnt
+    100002: actuator_LB02_jnt
+    100004: actuator_LB_jnt
+    100006: actuator_LF02_jnt
+    100008: actuator_LF_jnt
+    100010: actuator_main_jnt
+    100012: actuator_RB02_jnt
+    100014: actuator_RB_jnt
+    100016: actuator_RF02_jnt
+    100018: actuator_RF_jnt
+    100020: //RootNode
+    100022: fk_ankle_jnt
+    100024: fk_ankle_jnt 1
+    100026: fk_ball_jnt
+    100028: fk_ball_jnt 1
+    100030: fk_knee_jnt
+    100032: fk_knee_jnt 1
+    100034: FK_L_arm_jnt
+    100036: FK_L_blade_end_jnt
+    100038: FK_L_blade_jnt
+    100040: FK_L_elbow_jnt
+    100042: FK_L_hand_jnt
+    100044: FK_L_index1_jnt
+    100046: FK_L_index2_jnt
+    100048: FK_L_index3_jnt
+    100050: FK_L_index_knuckle_jnt
+    100052: FK_L_pinky1_jnt
+    100054: FK_L_pinky2_jnt
+    100056: FK_L_pinky3_jnt
+    100058: FK_L_pinky_knucle_jnt
+    100060: FK_L_thumb1_jnt
+    100062: FK_L_thumb2_jnt
+    100064: FK_L_thumb2_jnt 1
+    100066: FK_L_thumb_knuckle_jnt
+    100068: FK_L_wrist_jnt
+    100070: FK_R_arm_jnt
+    100072: FK_R_blade_end_jnt
+    100074: FK_R_blade_jnt
+    100076: FK_R_elbow_jnt
+    100078: FK_R_hand_jnt
+    100080: FK_R_index1_jnt
+    100082: FK_R_index2_jnt
+    100084: FK_R_index3_jnt
+    100086: FK_R_index_knuckle_jnt
+    100088: FK_R_pinky1_jnt
+    100090: FK_R_pinky2_jnt
+    100092: FK_R_pinky3_jnt
+    100094: FK_R_pinky_knucle_jnt
+    100096: FK_R_thumb1_jnt
+    100098: FK_R_thumb2_jnt
+    100100: FK_R_thumb2_jnt 1
+    100102: FK_R_thumb_knuckle_jnt
+    100104: FK_R_wrist_jnt
+    100106: fk_thigh_jnt
+    100108: fk_thigh_jnt1
+    100110: fk_toe_jnt
+    100112: fk_toe_jnt 1
+    100114: head_jnt
+    100116: ik_ankle_jnt
+    100118: ik_ankle_jnt 1
+    100120: ik_ball_jnt
+    100122: ik_ball_jnt 1
+    100124: ik_knee_jnt
+    100126: ik_knee_jnt 1
+    100128: ik_thigh_jnt
+    100130: ik_thigh_jnt1
+    100132: ik_toe_jnt
+    100134: ik_toe_jnt 1
+    100136: L_L_heel_end_jnt
+    100138: L_L_heel_jnt
+    100140: L_real_ankle_jnt
+    100142: L_real_ball_jnt
+    100144: L_real_knee_jnt
+    100146: L_real_thigh_jnt
+    100148: L_real_toe_jnt
+    100150: L_rocket1_jnt
+    100152: L_rocket2_jnt
+    100154: L_rocket3_jnt
+    100156: L_rocket4_jnt
+    100158: L_rocket5_jnt
+    100160: L_rocket6_jnt
+    100162: L_rocket_housing_jnt
+    100164: L_shoulder_jnt
+    100166: R_heel_end_jnt
+    100168: R_R_heel_jnt
+    100170: R_real_ankle_jnt
+    100172: R_real_ball_jnt
+    100174: R_real_knee_jnt
+    100176: R_real_thigh_jnt
+    100178: R_real_toe_jnt
+    100180: R_rocket1_jnt
+    100182: R_rocket2_jnt
+    100184: R_rocket3_jnt
+    100186: R_rocket4_jnt
+    100188: R_rocket5_jnt
+    100190: R_rocket6_jnt
+    100192: R_rocket_housing_jnt
+    100194: R_shoulder_jnt1
+    100196: rod_LB02_jnt
+    100198: rod_LB_jnt
+    100200: rod_LF_jnt
+    100202: rod_LF_jnt 1
+    100204: rod_main_jnt
+    100206: rod_RB02_jnt
+    100208: rod_RB_jnt
+    100210: rod_RF02_jnt
+    100212: rod_RF_jnt
+    100214: root_jnt
+    100216: torso_jnt
+    100218: waist_jnt
+    400000: ab_jnt
+    400002: actuator_LB02_jnt
+    400004: actuator_LB_jnt
+    400006: actuator_LF02_jnt
+    400008: actuator_LF_jnt
+    400010: actuator_main_jnt
+    400012: actuator_RB02_jnt
+    400014: actuator_RB_jnt
+    400016: actuator_RF02_jnt
+    400018: actuator_RF_jnt
+    400020: //RootNode
+    400022: fk_ankle_jnt
+    400024: fk_ankle_jnt 1
+    400026: fk_ball_jnt
+    400028: fk_ball_jnt 1
+    400030: fk_knee_jnt
+    400032: fk_knee_jnt 1
+    400034: FK_L_arm_jnt
+    400036: FK_L_blade_end_jnt
+    400038: FK_L_blade_jnt
+    400040: FK_L_elbow_jnt
+    400042: FK_L_hand_jnt
+    400044: FK_L_index1_jnt
+    400046: FK_L_index2_jnt
+    400048: FK_L_index3_jnt
+    400050: FK_L_index_knuckle_jnt
+    400052: FK_L_pinky1_jnt
+    400054: FK_L_pinky2_jnt
+    400056: FK_L_pinky3_jnt
+    400058: FK_L_pinky_knucle_jnt
+    400060: FK_L_thumb1_jnt
+    400062: FK_L_thumb2_jnt
+    400064: FK_L_thumb2_jnt 1
+    400066: FK_L_thumb_knuckle_jnt
+    400068: FK_L_wrist_jnt
+    400070: FK_R_arm_jnt
+    400072: FK_R_blade_end_jnt
+    400074: FK_R_blade_jnt
+    400076: FK_R_elbow_jnt
+    400078: FK_R_hand_jnt
+    400080: FK_R_index1_jnt
+    400082: FK_R_index2_jnt
+    400084: FK_R_index3_jnt
+    400086: FK_R_index_knuckle_jnt
+    400088: FK_R_pinky1_jnt
+    400090: FK_R_pinky2_jnt
+    400092: FK_R_pinky3_jnt
+    400094: FK_R_pinky_knucle_jnt
+    400096: FK_R_thumb1_jnt
+    400098: FK_R_thumb2_jnt
+    400100: FK_R_thumb2_jnt 1
+    400102: FK_R_thumb_knuckle_jnt
+    400104: FK_R_wrist_jnt
+    400106: fk_thigh_jnt
+    400108: fk_thigh_jnt1
+    400110: fk_toe_jnt
+    400112: fk_toe_jnt 1
+    400114: head_jnt
+    400116: ik_ankle_jnt
+    400118: ik_ankle_jnt 1
+    400120: ik_ball_jnt
+    400122: ik_ball_jnt 1
+    400124: ik_knee_jnt
+    400126: ik_knee_jnt 1
+    400128: ik_thigh_jnt
+    400130: ik_thigh_jnt1
+    400132: ik_toe_jnt
+    400134: ik_toe_jnt 1
+    400136: L_L_heel_end_jnt
+    400138: L_L_heel_jnt
+    400140: L_real_ankle_jnt
+    400142: L_real_ball_jnt
+    400144: L_real_knee_jnt
+    400146: L_real_thigh_jnt
+    400148: L_real_toe_jnt
+    400150: L_rocket1_jnt
+    400152: L_rocket2_jnt
+    400154: L_rocket3_jnt
+    400156: L_rocket4_jnt
+    400158: L_rocket5_jnt
+    400160: L_rocket6_jnt
+    400162: L_rocket_housing_jnt
+    400164: L_shoulder_jnt
+    400166: R_heel_end_jnt
+    400168: R_R_heel_jnt
+    400170: R_real_ankle_jnt
+    400172: R_real_ball_jnt
+    400174: R_real_knee_jnt
+    400176: R_real_thigh_jnt
+    400178: R_real_toe_jnt
+    400180: R_rocket1_jnt
+    400182: R_rocket2_jnt
+    400184: R_rocket3_jnt
+    400186: R_rocket4_jnt
+    400188: R_rocket5_jnt
+    400190: R_rocket6_jnt
+    400192: R_rocket_housing_jnt
+    400194: R_shoulder_jnt1
+    400196: rod_LB02_jnt
+    400198: rod_LB_jnt
+    400200: rod_LF_jnt
+    400202: rod_LF_jnt 1
+    400204: rod_main_jnt
+    400206: rod_RB02_jnt
+    400208: rod_RB_jnt
+    400210: rod_RF02_jnt
+    400212: rod_RF_jnt
+    400214: root_jnt
+    400216: torso_jnt
+    400218: waist_jnt
+    7400000: PatriotV_flinchhi
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: PatriotV_flinchhi
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 
