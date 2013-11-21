@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: d363f033c242bf043851235d63e98c75
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Main_cannon_housing_weapons
+    100002: Main_cannon_housing_weapons main_cannon1
+    100004: Main_cannon_housing_weapons turret_platform1
+    100006: Main_cannon_housing_weapons turret_platform1 turret_arm
+    100008: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_1
+    100010: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_1
+      gun_1
+    100012: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_2
+    100014: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_2
+      gun_2
+    100016: Main_cannon_housing_weapons turret_platform_2
+    100018: Main_cannon_housing_weapons turret_platform_2 turret_arm
+    100020: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_1
+    100022: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_1
+      gun_1
+    100024: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_2
+    100026: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_2
+      gun_2
+    100028: //RootNode
+    400000: Main_cannon_housing_weapons
+    400002: Main_cannon_housing_weapons main_cannon1
+    400004: Main_cannon_housing_weapons turret_platform1
+    400006: Main_cannon_housing_weapons turret_platform1 turret_arm
+    400008: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_1
+    400010: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_1
+      gun_1
+    400012: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_2
+    400014: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_2
+      gun_2
+    400016: Main_cannon_housing_weapons turret_platform_2
+    400018: Main_cannon_housing_weapons turret_platform_2 turret_arm
+    400020: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_1
+    400022: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_1
+      gun_1
+    400024: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_2
+    400026: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_2
+      gun_2
+    400028: //RootNode
+    2300000: Main_cannon_housing_weapons
+    2300002: Main_cannon_housing_weapons main_cannon1
+    2300004: Main_cannon_housing_weapons turret_platform1
+    2300006: Main_cannon_housing_weapons turret_platform1 turret_arm
+    2300008: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_1
+    2300010: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_1
+      gun_1
+    2300012: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_2
+    2300014: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_2
+      gun_2
+    2300016: Main_cannon_housing_weapons turret_platform_2
+    2300018: Main_cannon_housing_weapons turret_platform_2 turret_arm
+    2300020: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_1
+    2300022: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_1
+      gun_1
+    2300024: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_2
+    2300026: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_2
+      gun_2
+    3300000: Main_cannon_housing_weapons
+    3300002: Main_cannon_housing_weapons main_cannon1
+    3300004: Main_cannon_housing_weapons turret_platform1
+    3300006: Main_cannon_housing_weapons turret_platform1 turret_arm
+    3300008: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_1
+    3300010: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_1
+      gun_1
+    3300012: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_2
+    3300014: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_2
+      gun_2
+    3300016: Main_cannon_housing_weapons turret_platform_2
+    3300018: Main_cannon_housing_weapons turret_platform_2 turret_arm
+    3300020: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_1
+    3300022: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_1
+      gun_1
+    3300024: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_2
+    3300026: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_2
+      gun_2
+    4300000: Main_cannon_housing_weapons
+    4300002: Main_cannon_housing_weapons main_cannon1
+    4300004: Main_cannon_housing_weapons turret_platform1
+    4300006: Main_cannon_housing_weapons turret_platform1 turret_arm
+    4300008: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_1
+    4300010: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_1
+      gun_1
+    4300012: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_2
+    4300014: Main_cannon_housing_weapons turret_platform1 turret_arm gun_housing_2
+      gun_2
+    4300016: Main_cannon_housing_weapons turret_platform_2
+    4300018: Main_cannon_housing_weapons turret_platform_2 turret_arm
+    4300020: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_1
+    4300022: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_1
+      gun_1
+    4300024: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_2
+    4300026: Main_cannon_housing_weapons turret_platform_2 turret_arm gun_housing_2
+      gun_2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 
