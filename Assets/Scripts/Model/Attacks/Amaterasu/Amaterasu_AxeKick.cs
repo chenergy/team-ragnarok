@@ -9,6 +9,7 @@ namespace FightGame
 	{	
 		public Amaterasu_AxeKick(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner)
 		{
+			
 			this.AddInstruction(new JointHitBoxInstruction(
 				"r_knee_jnt", 				
 				attackOwner, 					// fighter
@@ -62,6 +63,7 @@ namespace FightGame
 				new Vector3(0.0f, 0.0f, 0.0f), 	// offset
 				new Vector3(0.0f, 0.0f, 0.0f)
 				));
+				
 			recoilStrength = 1.0f;
 			knockbackStrength = 10.0f;
 		}
