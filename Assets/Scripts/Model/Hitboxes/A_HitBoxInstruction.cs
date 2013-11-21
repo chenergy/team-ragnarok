@@ -41,7 +41,7 @@ namespace FightGame{
 		
 		public virtual void Start(){
 			if (this.onStartSound != null) 
-				GameManager.PlayAudio( this.onStartSound );
+				GameManager.PlayAudio( this.onStartSound, this.fighter.currentAttack.speed );
 			this.fighter.AddMovement( this.movement );
 			this.started = true;
 		}

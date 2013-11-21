@@ -8,6 +8,7 @@ namespace FightGame
 	public abstract class A_Buff
 	{
 		public		string		name;
+		public 		AudioClip 	onStartSound;
 		private 	float 		timer;
 		private 	float 		duration;
 		private 	bool		activated;
@@ -35,6 +36,7 @@ namespace FightGame
 		
 		public void Update(){
 			if (!this.activated && this.timer >= chargeTime){
+				GameManager.PlayAudio (this.onStartSound, 1.0f);
 				this.ApplyBuff();
 				this.activated = true;
 			}

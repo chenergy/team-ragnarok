@@ -11,6 +11,23 @@ namespace FSM
 		public override void execute(FSMContext c, object o){
 			A_Fighter fighter = (A_Fighter)o;
 			fighter.gobj.animation.CrossFade(fighter.animationNameMap[FighterAnimation.IDLE]);
+
+			switch (fighter.name) {
+			case "Amaterasu":
+				GameManager.PlayAudioLoop (GameManager.Sounds.Ama_Idle, 1.0f);
+				break;
+			case "Heavy":
+				GameManager.PlayAudioLoop (GameManager.Sounds.Heavy_Idle, 1.0f);
+				break;
+			case "Odin":
+				//GameManager.PlayAudioLoop (GameManager.Sounds.Odin_Idle, moveSpeed);
+				break;
+			case "PatriotV":
+				//GameManager.PlayAudioLoop (GameManager.Sounds.PatriotV_Death, 1.0f);
+				break;
+			default:
+				break;
+			}
 		}
 	}
 }

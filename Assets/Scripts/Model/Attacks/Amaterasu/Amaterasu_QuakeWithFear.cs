@@ -10,19 +10,22 @@ namespace FightGame
 		public Amaterasu_QuakeWithFear(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner)
 		{
 			
-			this.AddInstruction(new ProjectileHitBoxInstruction(
-				"Amaterasu_projectile", 		// projectile name
-				"l_ball_jnt",					
-				new Vector3(1.0f, 0.0f, 0.0f), 	// direction
-				10.0f, 							// speed
-				attackOwner, 					// A_fighter
-				1.0f, 							// radius
-				1.0f, 							// damage
-				0.8f, 							// startTime
-				1.2f,							// endTime
-				new Vector3(0.0f, 0.0f, 0.0f),	// offset
-				new Vector3(0.0f, 0.0f, 0.0f)	// movement
-				));				
+			ProjectileHitBoxInstruction hitbox1 = new ProjectileHitBoxInstruction (
+				                                      "Amaterasu_projectile", 		// projectile name
+				                                      "l_ball_jnt",					
+				                                      new Vector3 (1.0f, 0.0f, 0.0f), 	// direction
+				                                      10.0f, 							// speed
+				                                      attackOwner, 					// A_fighter
+				                                      1.0f, 							// radius
+				                                      1.0f, 							// damage
+				                                      0.8f, 							// startTime
+				                                      1.2f,							// endTime
+				                                      new Vector3 (0.0f, 0.0f, 0.0f),	// offset
+				                                      new Vector3 (0.0f, 0.0f, 0.0f)	// movement
+			                                      );
+			hitbox1.onStartSound = GameManager.Sounds.Ama_QuakeWithFear;
+			this.AddInstruction (hitbox1);
+
 			this.AddInstruction(new ProjectileHitBoxInstruction(
 				"Amaterasu_projectile", 		// projectile name
 				"l_ball_jnt",					

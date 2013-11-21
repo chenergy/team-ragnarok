@@ -21,6 +21,8 @@ namespace FightGame{
 				new Vector3(0.0f, 0.0f, 0.0f),		// offset
 				new Vector3(0.0f, 0.0f, 0.0f)		// movement
 				);
+			raven1.onStartSound = GameManager.Sounds.Odin_RavenStorm;
+
 			ProjectileHitBoxInstruction raven2 = new ProjectileHitBoxInstruction(
 				"odin_ravens", 			// projectile name
 				"neck_jnt", 						// starting joint

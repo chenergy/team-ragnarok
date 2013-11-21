@@ -8,6 +8,7 @@ namespace FightGame
 	public class Buff_Fury : A_Buff
 	{
 		GameObject fire;
+
 		public Buff_Fury ( float duration, A_Fighter attackOwner, string name, float chargeTime = 0.7f ) : base( duration, attackOwner, name, chargeTime )
 		{
 			this.name = "Fury";

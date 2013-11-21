@@ -19,6 +19,8 @@ namespace FightGame
 				Vector3.zero,					// offset
 				new Vector3( 0.0f, 0, 0 )		// movement
 				);
+			punch1.onStartSound = GameManager.Sounds.Heavy_TriplePunch;
+
 			JointHitBoxInstruction punch2 = new JointHitBoxInstruction(
 				"r_wrist_jnt", 					// joint
 				attackOwner, 					// fighter
@@ -40,9 +42,9 @@ namespace FightGame
 				new Vector3( 0.2f, 0, 0 )		// movement
 				);
 			
-			punch1.onCollisionSound = GameManager.Sounds.Sheep;
-			punch2.onCollisionSound = GameManager.Sounds.Sheep;
-			punch3.onCollisionSound = GameManager.Sounds.Sheep;
+			//punch1.onCollisionSound = GameManager.Sounds.Sheep;
+			//punch2.onCollisionSound = GameManager.Sounds.Sheep;
+			//punch3.onCollisionSound = GameManager.Sounds.Sheep;
 			
 			this.AddInstruction( punch1 );			
 			this.AddInstruction( punch2 );

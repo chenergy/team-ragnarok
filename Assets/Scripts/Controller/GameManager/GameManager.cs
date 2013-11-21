@@ -193,8 +193,54 @@ namespace FightGame{
 			instance.gModel.ui = GameObject.Find("UI").GetComponent<UI_Script>();
 		}
 		
-		public static void PlayAudio (AudioClip sound){
-			AudioSource.PlayClipAtPoint( sound, Camera.camera.transform.position );
+		public static void PlayAudio (AudioClip sound, float speed){
+			/*
+			bool canCreateAudio = true;
+			foreach (GameObject gobj in GameObject.FindGameObjectsWithTag ("Audio")) {
+				if (gobj.GetComponent<AudioSource> ().clip.name == sound.name) {
+					canCreateAudio = false;
+					break;
+				}
+			}
+*/
+			//if (canCreateAudio) {
+				GameObject audioSource = GameObject.Instantiate (Resources.Load ("Audio/AudioSource", typeof(GameObject)), Camera.camera.transform.position, Quaternion.identity) as GameObject;
+				audioSource.transform.parent = Camera.camera.transform;
+				AudioSource source = audioSource.GetComponent<AudioSource> ();
+
+				source.pitch = speed;
+				source.clip = sound;
+				source.Play ();
+
+				GameObject.Destroy (audioSource, 3.0f);
+			//}
+		}
+
+		public static void PlayAudioLoop(AudioClip sound, float speed){
+			bool audioExists = false;
+			//GameObject existingAudio = null;
+			foreach (GameObject gobj in GameObject.FindGameObjectsWithTag ("Audio")) {
+				if (gobj.GetComponent<AudioSource> ().clip.name == sound.name) {
+					audioExists = true;
+					//existingAudio = gobj;
+					break;
+				}
+			}
+
+			if (!audioExists) {
+				GameObject audioSource = GameObject.Instantiate (Resources.Load ("Audio/AudioSourceLoop", typeof(GameObject)), Camera.camera.transform.position, Quaternion.identity) as GameObject;
+				audioSource.transform.parent = Camera.camera.transform;
+				AudioSource source = audioSource.GetComponent<AudioSource> ();
+
+				source.pitch = speed;
+				source.clip = sound;
+				source.volume = 0.2f;
+				source.Play ();
+
+				GameObject.Destroy (audioSource, sound.length * (1.0f / speed));
+				Debug.Log (sound.length * speed);
+				//Debug.Break ();
+			}
 		}
 	}
 }

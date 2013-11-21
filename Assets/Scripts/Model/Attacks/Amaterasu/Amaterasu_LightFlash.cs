@@ -12,16 +12,18 @@ namespace FightGame
 		{
 			//JointHitBoxInstruction(joint,attackowner,radius,damage,starttime,endtime,offset,movement)
 			//ProjectileHitBoxInstruction(projectilename,starting joint,direction,speed,attackowner,radius,damage,starttime,endtime,offset,movement
-			this.AddInstruction(new JointHitBoxInstruction(
-				"r_ball_jnt", 		//joint
-				attackOwner, 		//fighter
-				2.0f, 				//radius
-				5.0f, 				//damage
-				0.2f, 				//start time 
-				3.0f, 				//end time
-				Vector3.zero, 		//offset
-				Vector3.zero 		//movement
-				));
+			JointHitBoxInstruction hitbox1 = new JointHitBoxInstruction (
+				                                 "r_ball_jnt", 		//joint
+				                                 attackOwner, 		//fighter
+				                                 2.0f, 				//radius
+				                                 5.0f, 				//damage
+				                                 0.2f, 				//start time 
+				                                 3.0f, 				//end time
+				                                 Vector3.zero, 		//offset
+				                                 Vector3.zero 		//movement
+			                                 );
+			hitbox1.onStartSound = GameManager.Sounds.Ama_LightFlash;
+			this.AddInstruction (hitbox1);
 
 			this.AddInstruction(new ProjectileHitBoxInstruction(
 				"Amaterasu_projectile", 		// projectile name

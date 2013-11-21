@@ -9,19 +9,22 @@ namespace FightGame
 	{	
 		public Heavy_NapalmFlameThrower(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner)
 		{
-			this.AddInstruction(new ProjectileHitBoxInstruction(
-				"Heavy_projectile", 				// projectile name
-				"l_wrist_jnt", 						// starting joint
-				new Vector3(1.0f, 0.0f, 0.0f), 		// direction
-				0.5f, 								// speed
-				attackOwner, 						// A_fighter
-				1.0f, 								// radius
-				1.0f, 								// damage
-				0.4f, 								// startTime
-				1.6f,  								// endTime
-				new Vector3(-1.2f, 0.0f, 0.0f),		// offset
-				new Vector3(0.0f, 0.0f, 0.0f)		// movement
-				));
+			ProjectileHitBoxInstruction hitbox1 = new ProjectileHitBoxInstruction (
+				                                      "Heavy_projectile", 				// projectile name
+				                                      "l_wrist_jnt", 						// starting joint
+				                                      new Vector3 (1.0f, 0.0f, 0.0f), 		// direction
+				                                      0.5f, 								// speed
+				                                      attackOwner, 						// A_fighter
+				                                      1.0f, 								// radius
+				                                      1.0f, 								// damage
+				                                      0.4f, 								// startTime
+				                                      1.6f,  								// endTime
+				                                      new Vector3 (-1.2f, 0.0f, 0.0f),		// offset
+				                                      new Vector3 (0.0f, 0.0f, 0.0f)		// movement
+			                                      );
+			hitbox1.onStartSound = GameManager.Sounds.Heavy_NapalmFlame;
+			this.AddInstruction (hitbox1);
+
 			this.AddInstruction(new ProjectileHitBoxInstruction(
 				"Heavy_projectile", 					// projectile name
 				"l_wrist_jnt", 						// starting joint

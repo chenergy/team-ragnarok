@@ -376,6 +376,24 @@ namespace FightGame
 			if(!this.PlayingSpecialAttack()){ //if not playing special attack, it can be hit
 				if (this.moveGraph.CurrentState.Name != "block" ||
 					GameManager.GetOpponentPlayer(this.playerNumber).Fighter.PlayingSpecialAttack()){
+					// Audio
+					switch (this.name) {
+					case "Amaterasu":
+						GameManager.PlayAudio (GameManager.Sounds.Ama_FlinchUp, 1.0f);
+						break;
+					case "Heavy":
+						GameManager.PlayAudio (GameManager.Sounds.Heavy_FlinchUp, 1.0f);
+						break;
+					case "Odin":
+						GameManager.PlayAudio (GameManager.Sounds.Odin_FlinchUp, 1.0f);
+						break;
+					case "PatriotV":
+						//GameManager.PlayAudio (GameManager.Sounds.PatriotV_Death, 1.0f);
+						break;
+					default:
+						break;
+					}
+
 					//these below codes  will execute when current fighter is not in a block state
 					// OR the opponent is playing special attack
 					//Meaning: if "current fighter  not block" then deal damage 
@@ -407,7 +425,23 @@ namespace FightGame
 				}
 				else{
 				//execute when this fighter not block, and opponent not use special
-					GameManager.PlayAudio( GameManager.Sounds.Block );
+					switch (this.name) {
+					case "Amaterasu":
+						GameManager.PlayAudio (GameManager.Sounds.Ama_Block, 1.0f);
+						break;
+					case "Heavy":
+						GameManager.PlayAudio (GameManager.Sounds.Heavy_Block, 1.0f);
+						break;
+					case "Odin":
+						GameManager.PlayAudio (GameManager.Sounds.Odin_Block, 1.0f);
+						break;
+					case "PatriotV":
+						//GameManager.PlayAudio (GameManager.Sounds.PatriotV_Death, 1.0f);
+						break;
+					default:
+						break;
+					}
+
 					GameObject explosion = GameObject.Instantiate(Resources.Load("Particles/Heavy_Block", typeof(GameObject)), hurtbox.gobj.transform.position, Quaternion.identity) as GameObject;
 					GameObject.Destroy(explosion, 2.0f);
 					

@@ -14,19 +14,21 @@ namespace FightGame
 			//this.instructions.Add(new ProjectileHitBoxInstruction( "Projectile_Cube", "r_wrist_jnt", new Vector3(1.0f, 0.0f, 0.0f), 10.0f, attackOwner, 2.0f, 10.0f, 0.9f, 2.2f ));
 			//this.instructions.Add(new ProjectileHitBoxInstruction( "Projectile_Cube", "r_wrist_jnt", new Vector3(1.0f, 0.0f, 0.0f), 10.0f, attackOwner, 2.0f, 10.0f, 1.1f, 2.4f ));
 
-			this.AddInstruction(new ProjectileHitBoxInstruction(
-				"Heavy_projectile", 				// projectile name
-				"r_wrist_jnt", 					// starting joint
-				new Vector3(1.0f, 0.0f, 0.0f), 	// direction
-				10.0f, 							// speed
-				attackOwner, 					// A_fighter
-				2.0f, 							// radius
-				3.0f, 							// damage
-				0.8f, 							// startTime
-				5.0f,							// endTime
-				new Vector3(2.0f, 0.0f, 0.0f),	// offset
-				new Vector3(-0.05f, 0.0f, 0.0f)	// movement
-				));
+			ProjectileHitBoxInstruction hitbox1 = new ProjectileHitBoxInstruction (
+				                                      "Heavy_projectile", 				// projectile name
+				                                      "r_wrist_jnt", 					// starting joint
+				                                      new Vector3 (1.0f, 0.0f, 0.0f), 	// direction
+				                                      10.0f, 							// speed
+				                                      attackOwner, 					// A_fighter
+				                                      2.0f, 							// radius
+				                                      3.0f, 							// damage
+				                                      0.8f, 							// startTime
+				                                      5.0f,							// endTime
+				                                      new Vector3 (2.0f, 0.0f, 0.0f),	// offset
+				                                      new Vector3 (-0.05f, 0.0f, 0.0f)	// movement
+			                                      );
+			hitbox1.onStartSound = GameManager.Sounds.Heavy_FireCarpet;
+			this.AddInstruction (hitbox1);
 		}
 	}
 }

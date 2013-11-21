@@ -12,17 +12,19 @@ namespace FightGame
 		
 		public Heavy_ColdShoulder(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner)
 		{
-			this.AddInstruction(new JointHitBoxInstruction(
-				"l_elbow_jnt", 					// joint
-				attackOwner, 					// fighter
-				5.0f, 							// radius
-				10.0f,							// damage
-				0.7f, 							// startTime
-				1.6f,  							// endTime
-				new Vector3(0.0f, 0.0f, 0.0f), 	// offset
-				new Vector3(0.5f, 0.0f, 0.0f),	// movement
-				true							// canKnockDown
-				));
+			JointHitBoxInstruction hitbox1 = new JointHitBoxInstruction (
+				                                 "l_elbow_jnt", 					// joint
+				                                 attackOwner, 					// fighter
+				                                 5.0f, 							// radius
+				                                 10.0f,							// damage
+				                                 0.7f, 							// startTime
+				                                 1.6f,  							// endTime
+				                                 new Vector3 (0.0f, 0.0f, 0.0f), 	// offset
+				                                 new Vector3 (0.5f, 0.0f, 0.0f),	// movement
+				                                 true							// canKnockDown
+			                                 );
+			hitbox1.onStartSound = GameManager.Sounds.Heavy_ColdShoulder;
+			this.AddInstruction (hitbox1);
 		}
 		
 		public override void Init(){

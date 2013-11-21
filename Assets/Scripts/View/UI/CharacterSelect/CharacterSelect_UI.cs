@@ -43,11 +43,11 @@ public class CharacterSelect_UI : MonoBehaviour {
 		}
 		playerOptions = GameObject.Find("PlayerSelection").GetComponent<PlayerSelectOptions>();
 		characterPortraits = new Dictionary<string, Texture2D>();
-		characters = new string[3,3]{
-						 {"Heavy","Amaterasu", "Odin"},
-					     {"Heavy" ,"none"     , "none"},
-					     {"none" ,"none"     , "none"}
-						};
+		characters = new string[3, 3] {
+			{ "Heavy", "Amaterasu", "Odin" },
+			{ "none", "none", "none" },
+			{ "none", "none", "none" }
+		};
 		foreach (Texture2D img in Portraits)
 		{
 			if (img!=null && img.name != null)

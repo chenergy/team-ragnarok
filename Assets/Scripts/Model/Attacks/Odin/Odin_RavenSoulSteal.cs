@@ -7,19 +7,22 @@ namespace FightGame{
 	public class Odin_RavenSoulSteal : Attack_Projectile {
 		public Odin_RavenSoulSteal(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner){
 					
-			this.AddInstruction(new ProjectileHitBoxInstruction(
-				"Amaterasu_projectile", 		// projectile name
-				"l_ball_jnt", 					// starting joint
-				new Vector3(0, 1f, 0), 			// direction
-				7.0f, 							// speed
-				attackOwner, 					// A_fighter
-				2.0f, 							// radius
-				2.0f, 							// damage
-				0.1f, 							// startTime
-				0.7f,							// endTime
-				new Vector3(-3.0f, 0.2f, 0.0f),	// offset
-				new Vector3(0.0f, 0.0f, 0.0f)	// movement
-				));
+			ProjectileHitBoxInstruction hitbox1 = new ProjectileHitBoxInstruction (
+				                                      "Amaterasu_projectile", 		// projectile name
+				                                      "l_ball_jnt", 					// starting joint
+				                                      new Vector3 (0, 1f, 0), 			// direction
+				                                      7.0f, 							// speed
+				                                      attackOwner, 					// A_fighter
+				                                      2.0f, 							// radius
+				                                      2.0f, 							// damage
+				                                      0.1f, 							// startTime
+				                                      0.7f,							// endTime
+				                                      new Vector3 (-3.0f, 0.2f, 0.0f),	// offset
+				                                      new Vector3 (0.0f, 0.0f, 0.0f)	// movement
+			                                      );
+			hitbox1.onStartSound = GameManager.Sounds.Odin_RavenSoulSteel;
+			this.AddInstruction (hitbox1);
+
 			this.AddInstruction(new ProjectileHitBoxInstruction(
 				"Amaterasu_projectile", 		// projectile name
 				"l_ball_jnt", 					// starting joint

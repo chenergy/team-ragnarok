@@ -9,16 +9,18 @@ namespace FightGame
 	{	
 		public Amaterasu_RisingSun(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner)
 		{
-			this.AddInstruction(new JointHitBoxInstruction(
-				"r_ball_jnt", 				
-				attackOwner, 					// fighter
-				1.50f, 							// radius
-				2.0f,							// damage
-				0.4f, 							// startTime
-				0.8f,  							// endTime
-				new Vector3(1.0f, 0.0f, 0.0f), 	// offset
-				new Vector3(0.1f, 0.0f, 0.0f)
-				));		
+			JointHitBoxInstruction hitbox1 = new JointHitBoxInstruction (
+				                                 "r_ball_jnt", 				
+				                                 attackOwner, 					// fighter
+				                                 1.50f, 							// radius
+				                                 2.0f,							// damage
+				                                 0.4f, 							// startTime
+				                                 0.8f,  							// endTime
+				                                 new Vector3 (1.0f, 0.0f, 0.0f), 	// offset
+				                                 new Vector3 (0.1f, 0.0f, 0.0f)
+			                                 );
+			hitbox1.onStartSound = GameManager.Sounds.Ama_RisingSun;
+			this.AddInstruction (hitbox1);
 			
 			this.AddInstruction(new JointHitBoxInstruction(
 				"l_ball_jnt", 				

@@ -25,6 +25,23 @@ namespace FSM
 					}
 				}
 				gobj.animation.CrossFade(fighter.animationNameMap[FighterAnimation.WALK_FORWARD]);
+
+				switch (fighter.name) {
+				case "Amaterasu":
+					GameManager.PlayAudioLoop (GameManager.Sounds.Ama_WalkForward, moveSpeed);
+					break;
+				case "Heavy":
+					GameManager.PlayAudioLoop (GameManager.Sounds.Heavy_WalkForward, moveSpeed);
+					break;
+				case "Odin":
+					GameManager.PlayAudioLoop (GameManager.Sounds.Odin_WalkForward, moveSpeed);
+					break;
+				case "PatriotV":
+					//GameManager.PlayAudioLoop (GameManager.Sounds.PatriotV_Death, 1.0f);
+					break;
+				default:
+					break;
+				}
 			}
 			else if(fighter.currentMovement == MoveCommand.BACK || fighter.currentMovement == MoveCommand.BACK_UP)
 			{
@@ -32,6 +49,23 @@ namespace FSM
 					gobj.transform.Translate(fighter.localForwardVector * -1 * moveSpeed * Time.deltaTime);
 				}
 				gobj.animation.CrossFade(fighter.animationNameMap[FighterAnimation.WALK_BACKWARD]);
+
+				switch (fighter.name) {
+				case "Amaterasu":
+					GameManager.PlayAudioLoop (GameManager.Sounds.Ama_WalkBackward, moveSpeed);
+					break;
+				case "Heavy":
+					GameManager.PlayAudioLoop (GameManager.Sounds.Heavy_WalkBackward, moveSpeed);
+					break;
+				case "Odin":
+					GameManager.PlayAudioLoop (GameManager.Sounds.Odin_WalkBackward, moveSpeed);
+					break;
+				case "PatriotV":
+					//GameManager.PlayAudioLoop (GameManager.Sounds.PatriotV_Death, 1.0f);
+					break;
+				default:
+					break;
+				}
 			}
 			
 			

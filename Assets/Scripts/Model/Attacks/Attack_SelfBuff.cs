@@ -20,7 +20,7 @@ namespace FightGame
 		public override void Execute(){
 			if (!this.activated){
 				if (this.onStartSound != null) 
-					GameManager.PlayAudio( this.onStartSound );
+					GameManager.PlayAudio( this.onStartSound, 1.0f );
 				this.attackOwner.AddBuff(this.buff);
 				this.activated = true;
 			}

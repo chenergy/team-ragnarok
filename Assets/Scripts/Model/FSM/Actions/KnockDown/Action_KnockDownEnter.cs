@@ -15,6 +15,23 @@ namespace FSM
 			fighter.globalActionTimer = 0.0f;
 			
 			gobj.animation.Stop();
+
+			switch (fighter.name) {
+			case "Amaterasu":
+				GameManager.PlayAudio (GameManager.Sounds.Ama_KnockDown, 1.0f);
+				break;
+			case "Heavy":
+				GameManager.PlayAudio (GameManager.Sounds.Heavy_KnockDown, 1.0f);
+				break;
+			case "Odin":
+				//GameManager.PlayAudio (GameManager.Sounds.Odin_KnockDown, 1.0f);
+				break;
+			case "PatriotV":
+				//GameManager.PlayAudio (GameManager.Sounds.PatriotV_Death, 1.0f);
+				break;
+			default:
+				break;
+			}
 		}
 	}
 }

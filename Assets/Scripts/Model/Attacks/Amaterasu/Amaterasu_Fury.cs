@@ -10,6 +10,7 @@ namespace FightGame
 		public Amaterasu_Fury(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner)
 		{
 			this.buff = new Buff_Fury( 5.0f, attackOwner, "Fury" );
+			this.buff.onStartSound = GameManager.Sounds.Ama_Fury;
 			//increase damage for the next attack
 			//increase more fire effect on her feet
 		}

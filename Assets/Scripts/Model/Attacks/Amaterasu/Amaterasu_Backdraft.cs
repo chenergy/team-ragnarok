@@ -10,18 +10,21 @@ namespace FightGame
 		public Amaterasu_Backdraft(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner)
 		{
 			//range attack, range 1.5, speed med, size med, damage small
-			this.AddInstruction(new ProjectileHitBoxInstruction(
-				"Amaterasu_projectile",
-				"l_ball_jnt",
-				new Vector3(1,0,0), 
-				7.0f,
-				attackOwner,
-				1.0f,
-				1.0f,
-				1.0f,
-				1.5f,
-				Vector3.zero,
-				Vector3.zero));	
+			ProjectileHitBoxInstruction hitbox1 = new ProjectileHitBoxInstruction (
+				                                 "Amaterasu_projectile",
+				                                 "l_ball_jnt",
+				                                 new Vector3 (1, 0, 0), 
+				                                 7.0f,
+				                                 attackOwner,
+				                                 1.0f,
+				                                 1.0f,
+				                                 1.0f,
+				                                 1.5f,
+				                                 Vector3.zero,
+				                                 Vector3.zero);
+			hitbox1.onStartSound = GameManager.Sounds.Ama_BackDraft;
+			this.AddInstruction (hitbox1);	
+
 			//empty hitbox to cause slide back at start of animation, rather than projectile at spawn.
 			this.AddInstruction(new JointHitBoxInstruction(
 				"r_ball_jnt", 
