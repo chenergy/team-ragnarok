@@ -469,7 +469,7 @@ public class CharacterSelect_UI : MonoBehaviour {
 	{
 		const int imageW = 128;
 		const int imageH = 256;
-		const int fontSize = 20;
+		const int fontSize = 30;
 		
 		
 		float rectWidth 			= (imageW*aspectW);
