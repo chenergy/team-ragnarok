@@ -45,7 +45,7 @@ public class CharacterSelect_UI : MonoBehaviour {
 		characterPortraits = new Dictionary<string, Texture2D>();
 		characters = new string[3, 3] {
 			{ "Heavy", "Amaterasu", "Odin" },
-			{ "none", "none", "none" },
+			{ "PatriotV", "none", "none" },
 			{ "none", "none", "none" }
 		};
 		foreach (Texture2D img in Portraits)
@@ -250,6 +250,7 @@ public class CharacterSelect_UI : MonoBehaviour {
 				p1SelectedChar = 	characters[(int)p1SelectLocation.y,(int)p1SelectLocation.x];
 				if(p1Gob==null)
 				{
+					print ("trying to load Resources/Fighters/CharacterSelect_" + p1SelectedChar);
 					p1Gob =  GameObject.Instantiate( Resources.Load("Fighters/CharacterSelect_" + p1SelectedChar, typeof(GameObject)),Vector3.up*20, Quaternion.Euler(0,90,0) ) as GameObject;
 					if (p1SelectedChar == "Amaterasu" || p1SelectedChar == "Odin") {
 						GameObject level = GameObject.Instantiate (Resources.Load ("Levels/GodPlatform", typeof(GameObject)), p1ModelPosition, Quaternion.identity) as GameObject;
@@ -393,7 +394,7 @@ public class CharacterSelect_UI : MonoBehaviour {
 	int DrawMenuGUI(float aspectH, float aspectW, int offX,int offY,GUIStyle style,Vector2 p1Loc, Vector2 p2Loc, Dictionary<string,Texture2D> characterPortraits,Texture2D p1SelectTexture,Texture2D p2SelectTexture,Texture2D portraitBG)
 	{
 		const int imageW = 128;
-		const int imageH = 128;
+		const int imageH = 256;
 		const int fontSize = 20;
 		
 		
@@ -414,7 +415,7 @@ public class CharacterSelect_UI : MonoBehaviour {
 					string charName = characters[i,j] ;
 					
 					// draw portrait bg
-					GUI.DrawTexture(myRect,portraitBG,ScaleMode.StretchToFill,true,0);
+					//GUI.DrawTexture(myRect,portraitBG,ScaleMode.StretchToFill,true,0);
 				
 					//draw character
 					if(charName!="none")

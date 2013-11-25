@@ -12,9 +12,8 @@ namespace FightGame
 			
 			this.gobj.animation[this.animationNameMap[FighterAnimation.WALK_FORWARD]].speed = 2.0f;
 			this.gobj.animation[this.animationNameMap[FighterAnimation.WALK_BACKWARD]].speed = 2.0f;
-			
+		
 			this.actionsCommandMap = new Dictionary<int, A_Attack>();
-			
 			this.actionsCommandMap[ActionCommand.REGULAR] 			= new Odin_SpeedJab(this.animationNameMap[FighterAnimation.REGULAR_ATTACK], this, 1.0f);
 			this.actionsCommandMap[ActionCommand.REGULAR_FORWARD] 	= new Odin_ThrustLunge(this.animationNameMap[FighterAnimation.REGULAR_FORWARD_ATTACK], this, 1.0f);
 			this.actionsCommandMap[ActionCommand.REGULAR_BACK] 		= new Odin_SweepingSpear(this.animationNameMap[FighterAnimation.REGULAR_BACK_ATTACK], this, 1.0f);

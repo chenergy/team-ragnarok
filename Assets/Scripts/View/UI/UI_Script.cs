@@ -4,6 +4,7 @@ using FightGame;
 
 public class UI_Script : MonoBehaviour
 {	
+	public float portraitW, portraitH,portraitOffX,portraitOffY,portraitOffXp2;
 	enum playStates {GAME,WINP1,WINP2,CHOOSE,PAUSE,BOTHLOSE};
 	playStates playState = playStates.GAME;
 	public int ROUNDTIME = 60;
@@ -50,6 +51,7 @@ public class UI_Script : MonoBehaviour
 	public Texture2D UI_staminaBlue;
 	public Texture2D UI_roundsMax;
 	public Texture2D UI_roundsWon;
+	public Texture2D UI_bghealthBar;
 	public int x,y=20;
 	Texture2D P1_portrait, P2_portrait;
 	
@@ -239,7 +241,7 @@ public class UI_Script : MonoBehaviour
 	void drawTimer(float aspectW, float aspectH,GUIStyle GS,int initFontSize,int time)
 	{
 		const int OFFSET_X 	= 465;
-		const int OFFSET_Y 	= 35;
+		const int OFFSET_Y 	= 29;
 		const float T_W 		= 90;
 		const float T_H 	= 90;
 		GS.fontSize = (int)(initFontSize * aspectH);
@@ -252,6 +254,7 @@ public class UI_Script : MonoBehaviour
 	
 	void drawStaminaBar(int playerNum, float stam, float maxStam, float aspectW, float aspectH, Texture2D texture)
 	{
+		stam*=1.1f;
 		if (playerNum == 1)
 		{
 			const int P1_STAM_OFFSET_X 	= 130;
@@ -287,6 +290,7 @@ public class UI_Script : MonoBehaviour
 	
 	void drawHealthBar(int playerNum, float health, float maxHealth, float aspectW, float aspectH, Texture2D texture)
 	{
+		health*=1.10f;
 		if (playerNum == 1)
 		{
 			const int P1_HEALTHBAR_OFFSET_X = 130;
@@ -305,7 +309,7 @@ public class UI_Script : MonoBehaviour
 		
 		if (playerNum == 2)
 		{
-			const int P2_HEALTHBAR_OFFSET_X = 573;
+			const int P2_HEALTHBAR_OFFSET_X = 580;
 			const int P2_HEALTHBAR_OFFSET_Y = 37;
 			const int P2_HEALTHBAR_INITSIZE = 320;
 			float healthBarWidth 			= (texture.width*aspectW) * (health/maxHealth);
@@ -327,6 +331,11 @@ public class UI_Script : MonoBehaviour
 		float newDmgBarVal = Mathf.Lerp(currentDmgBarVal,health,lerpValue);
 		drawHealthBar(playerNum,newDmgBarVal,maxHealth,aspectW,aspectH,texture);
 		return newDmgBarVal;
+	}
+	
+	void drawBGHealthBar(int playerNum, float currentDmgBarVal, float lerpValue, float health, float maxHealth, float aspectW, float aspectH, Texture2D texture)
+	{
+		drawHealthBar(playerNum,100,100,aspectW,aspectH,texture);
 	}
 	
 	void drawUIOverlay(float aspectH,Texture2D texture)
@@ -389,12 +398,13 @@ public class UI_Script : MonoBehaviour
 	
 	void drawPortrait(int playerNum, float aspectH, float aspectW, Texture2D texture)
 	{
+		
 		if (playerNum==1)
 		{
-			const int P1_PORTRAIT_OFFSET_X = 44;
-			const int P1_PORTRAIT_OFFSET_Y = 26;
-			float portraitWidth 			= (85*aspectW);
-			float portraitHeight 			= (103*aspectH);
+			float P1_PORTRAIT_OFFSET_X = portraitOffX;
+			float P1_PORTRAIT_OFFSET_Y = portraitOffY;
+			float portraitWidth 			= (portraitW*aspectW);
+			float portraitHeight 			= (portraitH*aspectH);
 			
 			GUI.DrawTexture(
 				new Rect(
@@ -408,10 +418,10 @@ public class UI_Script : MonoBehaviour
 		
 		if (playerNum==2)
 		{
-			const int P1_PORTRAIT_OFFSET_X = 900;
-			const int P1_PORTRAIT_OFFSET_Y = 30;
-			float portraitWidth 			= (85*aspectW);
-			float portraitHeight 			= (103*aspectH);
+			float P1_PORTRAIT_OFFSET_X = portraitOffXp2;
+			float P1_PORTRAIT_OFFSET_Y = portraitOffY;
+			float portraitWidth 			= (-portraitW*aspectW);
+			float portraitHeight 			= (portraitH*aspectH);
 			
 			GUI.DrawTexture(
 				new Rect(
@@ -477,7 +487,12 @@ public class UI_Script : MonoBehaviour
 		
 			float aspectW = Screen.width/1024.0f;
 			float aspectH = Screen.height/768.0f;
+
+			drawPortrait(1,aspectH,aspectW,P1_portrait);
+			drawPortrait(2,aspectH,aspectW,P2_portrait);
 			
+			drawBGHealthBar(1,dmgBarHealth_P1,0,100,100,aspectW,aspectH,UI_bghealthBar);
+			drawBGHealthBar(2,dmgBarHealth_P1,0,100,100,aspectW,aspectH,UI_bghealthBar);
 			dmgBarHealth_P1 = drawDmgBar(1,dmgBarHealth_P1,dmgRedBarSpeed,cur_p1hp,max_p1hp,aspectW,aspectH,UI_healthRed);
 			dmgBarHealth_P2 = drawDmgBar(2,dmgBarHealth_P2,dmgRedBarSpeed,cur_p2hp,max_p2hp,aspectW,aspectH,UI_healthRed);
 			drawHealthBar(1,cur_p1hp,max_p1hp,aspectW,aspectH,UI_healthGreen);
@@ -485,8 +500,7 @@ public class UI_Script : MonoBehaviour
 			drawStaminaBar(1,cur_p1meter,max_p1meter,aspectW,aspectH,UI_staminaBlue);
 			drawStaminaBar(2,cur_p2meter,max_p2meter,aspectW,aspectH,UI_staminaBlue);
 			
-			drawPortrait(1,aspectH,aspectW,P1_portrait);
-			drawPortrait(2,aspectH,aspectW,P2_portrait);
+
 			
 			drawMaxRounds(1,maxRounds,aspectW,aspectH,UI_roundsMax);
 			drawMaxRounds(2,maxRounds,aspectW,aspectH,UI_roundsMax);
