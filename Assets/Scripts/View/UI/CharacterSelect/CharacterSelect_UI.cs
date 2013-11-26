@@ -32,7 +32,9 @@ public class CharacterSelect_UI : MonoBehaviour {
 	PlayerSelectOptions playerOptions;
 	public int playerSelectedLevel;
 	bool levelSelect;
+	bool roundSelect;
 	public GameObject playerSelectPersistantObject;
+	int roundNumber = 2;
 	
 	void Start ()
 	{
@@ -43,10 +45,9 @@ public class CharacterSelect_UI : MonoBehaviour {
 		}
 		playerOptions = GameObject.Find("PlayerSelection").GetComponent<PlayerSelectOptions>();
 		characterPortraits = new Dictionary<string, Texture2D>();
-		characters = new string[3, 3] {
-			{ "Heavy", "Amaterasu", "Odin" },
-			{ "none", "none", "none" },
-			{ "none", "none", "none" }
+		characters = new string[2, 2] {
+			{ "Heavy", "Amaterasu"},
+			{ "PatriotV", "Odin" }
 		};
 		foreach (Texture2D img in Portraits)
 		{
@@ -101,9 +102,57 @@ public class CharacterSelect_UI : MonoBehaviour {
 		{
 			levelSelected = true;
 			selectSound.Play();
+			GameObject.Find("PlayerSelection").GetComponent<PlayerSelectOptions>().rounds = roundNumber;
 		}
 		
 	}
+	
+	
+	void ProcessRoundSelectInput()
+	{
+		
+		
+		if(!p1MovingH && !p2MovingH)
+		{
+			if(Input.GetAxis("HorizontalP1") > 0.2f || Input.GetKeyDown(KeyCode.D) || Input.GetAxis("HorizontalP2") > 0.2f || Input.GetKeyDown(KeyCode.RightArrow))
+			{
+				Debug.Log("pushing right");
+				
+				roundNumber+=1;
+				moveCursor.Play();
+				
+			}
+			if(Input.GetAxis("HorizontalP1") < -0.2f || Input.GetKeyDown(KeyCode.A) || Input.GetAxis("HorizontalP2") < -0.2f || Input.GetKeyDown(KeyCode.LeftArrow))
+			{
+				Debug.Log("pushing  left");
+				
+				roundNumber-=1;
+				moveCursor.Play();
+				
+			}
+			
+		}
+		
+		FlagAnalogSticks();
+		
+		if(roundNumber < 1)
+		{
+			roundNumber =1;
+		}
+		else if(roundNumber > 5)
+		{
+			roundNumber = 5;
+		}
+		
+		if(Input.GetKeyDown(KeyCode.Joystick1Button0) ||  Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Return))
+		{
+			levelSelect = true;
+			roundSelect = false;
+			selectSound.Play();
+		}
+		
+	}
+	
 	
 	void ShowLevelSelect()
 	{
@@ -116,6 +165,11 @@ public class CharacterSelect_UI : MonoBehaviour {
 		
 		
 	}
+	
+	
+	
+
+	
 	
 	void FlagAnalogSticks()
 	{
@@ -174,11 +228,22 @@ public class CharacterSelect_UI : MonoBehaviour {
 		// load next level when hitting any key
 		if(p2Gob && p1Gob != null && timer<=timerMax)
 		{
-			ShowLevelSelect();
-			ProcessLevelSelectInput();
-			levelSelect = true;
-			if(levelSelected)
-				timer+= Time.deltaTime; //start countdown select timer
+
+			if(levelSelect)
+			{
+				
+				ShowLevelSelect();
+				ProcessLevelSelectInput();
+				levelSelect = true;
+				if(levelSelected)
+					timer+= Time.deltaTime; //start countdown select timer
+			}
+			else
+			{
+				//ShowRoundSelect();
+				roundSelect = true;
+				ProcessRoundSelectInput();
+			}
 		}
 		else if(timer>timerMax && Input.anyKey)
 		{
@@ -200,7 +265,7 @@ public class CharacterSelect_UI : MonoBehaviour {
 				if(Input.GetAxis("HorizontalP1") > 0.2f || Input.GetKeyDown(KeyCode.D))
 				{
 					Debug.Log("pushing right");
-					if(p1SelectLocation.x < 2)
+					if(p1SelectLocation.x < 1)
 					{
 						p1SelectLocation+=Vector2.right;
 						moveCursor.Play();
@@ -223,7 +288,7 @@ public class CharacterSelect_UI : MonoBehaviour {
 				if(Input.GetAxis("VerticalP1") > 0.2f || Input.GetKeyDown(KeyCode.S))
 				{
 					Debug.Log("pushing down");
-					if(p1SelectLocation.y < 2)
+					if(p1SelectLocation.y < 1)
 					{
 						p1SelectLocation+=Vector2.up;
 						moveCursor.Play();
@@ -250,6 +315,7 @@ public class CharacterSelect_UI : MonoBehaviour {
 				p1SelectedChar = 	characters[(int)p1SelectLocation.y,(int)p1SelectLocation.x];
 				if(p1Gob==null)
 				{
+					print ("trying to load Resources/Fighters/CharacterSelect_" + p1SelectedChar);
 					p1Gob =  GameObject.Instantiate( Resources.Load("Fighters/CharacterSelect_" + p1SelectedChar, typeof(GameObject)),Vector3.up*20, Quaternion.Euler(0,90,0) ) as GameObject;
 					if (p1SelectedChar == "Amaterasu" || p1SelectedChar == "Odin") {
 						GameObject level = GameObject.Instantiate (Resources.Load ("Levels/GodPlatform", typeof(GameObject)), p1ModelPosition, Quaternion.identity) as GameObject;
@@ -273,7 +339,7 @@ public class CharacterSelect_UI : MonoBehaviour {
 				if(Input.GetAxis("HorizontalP2") > 0.2f || Input.GetKeyDown(KeyCode.RightArrow))
 				{
 					Debug.Log("pushing right");
-					if(p2SelectLocation.x < 2)
+					if(p2SelectLocation.x < 1)
 					{
 						p2SelectLocation+=Vector2.right;
 						moveCursor.Play();
@@ -296,7 +362,7 @@ public class CharacterSelect_UI : MonoBehaviour {
 				if(Input.GetAxis("VerticalP2") > 0.2f || Input.GetKeyDown(KeyCode.DownArrow))
 				{
 					Debug.Log("pushing down");
-					if(p2SelectLocation.y < 2)
+					if(p2SelectLocation.y < 1)
 					{
 						p2SelectLocation+=Vector2.up;
 						moveCursor.Play();
@@ -377,9 +443,18 @@ public class CharacterSelect_UI : MonoBehaviour {
 		*/
 		if (levelSelect)
 		{
+			GameObject.Find("ChooseRounds").GetComponent<GUIText>().enabled = false;
 			GameObject.Find("ChooseLevel").GetComponent<GUIText>().enabled = !levelSelected;
 			GameObject.Find("ChooseLevel").GetComponent<GUIText>().pixelOffset = new Vector2(levelSelectTextOffset.x *aspectW,levelSelectTextOffset.y * aspectH);
 		}
+		
+		if (roundSelect)
+		{
+			GameObject.Find("ChooseRounds").GetComponent<GUIText>().enabled = true;
+			GameObject.Find("ChooseRounds").GetComponent<GUIText>().text = "Rounds: " + roundNumber;
+			GameObject.Find("ChooseRounds").GetComponent<GUIText>().pixelOffset = new Vector2(levelSelectTextOffset.x *aspectW,levelSelectTextOffset.y * aspectH);
+		}
+
 		
 		if (timer>timerMax)
 		{
@@ -393,8 +468,8 @@ public class CharacterSelect_UI : MonoBehaviour {
 	int DrawMenuGUI(float aspectH, float aspectW, int offX,int offY,GUIStyle style,Vector2 p1Loc, Vector2 p2Loc, Dictionary<string,Texture2D> characterPortraits,Texture2D p1SelectTexture,Texture2D p2SelectTexture,Texture2D portraitBG)
 	{
 		const int imageW = 128;
-		const int imageH = 128;
-		const int fontSize = 20;
+		const int imageH = 256;
+		const int fontSize = 30;
 		
 		
 		float rectWidth 			= (imageW*aspectW);
@@ -402,9 +477,9 @@ public class CharacterSelect_UI : MonoBehaviour {
 		style.fontSize = (int)(fontSize * aspectH);
 
 		
-		for (int i=0;i<3;i++)
+		for (int i=0;i<2;i++)
 		{
-				for (int j=0;j<3;j++)
+				for (int j=0;j<2;j++)
 				{
 					Rect myRect = new Rect(
 									portrait_offX * aspectW + j * rectWidth + paddingY * aspectW*j,
@@ -414,7 +489,7 @@ public class CharacterSelect_UI : MonoBehaviour {
 					string charName = characters[i,j] ;
 					
 					// draw portrait bg
-					GUI.DrawTexture(myRect,portraitBG,ScaleMode.StretchToFill,true,0);
+					//GUI.DrawTexture(myRect,portraitBG,ScaleMode.StretchToFill,true,0);
 				
 					//draw character
 					if(charName!="none")

@@ -6,6 +6,7 @@ public class PlayerSelectOptions : MonoBehaviour {
 	public string p1Name;
 	public string p2Name;
 	public string levelSelect;
+	public int rounds = 3;
 	
 	void Awake() {
         DontDestroyOnLoad(transform.gameObject);
