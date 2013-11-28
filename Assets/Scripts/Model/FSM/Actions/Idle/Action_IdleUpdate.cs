@@ -20,7 +20,7 @@ namespace FSM
 				GameManager.PlayAudioLoop (GameManager.Sounds.Heavy_Idle, 1.0f);
 				break;
 			case "Odin":
-				//GameManager.PlayAudioLoop (GameManager.Sounds.Odin_Idle, moveSpeed);
+				GameManager.PlayAudioLoop (GameManager.Sounds.Odin_Idle, 1.0f);
 				break;
 			case "PatriotV":
 				//GameManager.PlayAudioLoop (GameManager.Sounds.PatriotV_Death, 1.0f);

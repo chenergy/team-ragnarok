@@ -44,8 +44,11 @@ public class GameSounds{
 
 	// Odin
 	public AudioClip Odin_Block;
+	public AudioClip Odin_Death;
 	public AudioClip Odin_FlinchDown;
 	public AudioClip Odin_FlinchUp;
+	public AudioClip Odin_Idle;
+	public AudioClip Odin_KnockDown;
 	public AudioClip Odin_RavenFury;
 	public AudioClip Odin_RavenSoulSteel;
 	public AudioClip Odin_RavenStorm;

@@ -19,7 +19,7 @@ public class flyingDrone : MonoBehaviour {
 		Vector3 droneMovement 	= new Vector3(flySpeed, SineWave(amplitude, angularFreq), 0); 
 		
 		if(this.transform.position.x < resetPoint){
-			this.transform.Translate(droneMovement, Space.World);
+			this.transform.Translate(droneMovement * Time.deltaTime, Space.World);
 		}
 		if(this.transform.position.x >= resetPoint){
 			this.transform.position = startPos;
