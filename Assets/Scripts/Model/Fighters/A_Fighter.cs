@@ -28,6 +28,10 @@ namespace FightGame
 		public	float							radius;
 		public	Vector3							localForwardVector;
 		public	float							extraDamage;
+		
+		//Hieu add for 'Counter' attack of PatriotV, need brief second of invincibility
+		public bool 							invincible;
+		
 		//public	bool							specialEffect;
 		
 		private	int								onHitTimer;
@@ -75,6 +79,9 @@ namespace FightGame
 			this.buffs				= new List<A_Buff>();
 			this.extraDamage		= 1.0f;
 			//this.specialEffect		= false;
+			
+			//Hieu add
+			invincible 				= false;
 			
 			this.onHitTimer			= 0;
 			this.onHitStarted		= false;

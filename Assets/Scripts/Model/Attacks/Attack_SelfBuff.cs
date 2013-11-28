@@ -17,6 +17,7 @@ namespace FightGame
 			this.activated = false;
 		}
 		
+		
 		public override void Execute(){
 			if (!this.activated){
 				if (this.onStartSound != null) 
@@ -26,7 +27,9 @@ namespace FightGame
 			}
 			this.timer += Time.deltaTime;
 		}
-		
+		public void AddInstruction ( JointHitBoxInstruction hbi ){
+			base.AddInstruction( hbi );
+		}
 		public override void Reset(){ 
 			this.activated = false;
 			this.timer = 0.0f;

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a1153ffd7df8fee40a3a2438d66abe26
+guid: b8395fc207d1bb54d876a4501479d127
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -223,7 +223,7 @@ ModelImporter:
     400214: root_jnt
     400216: torso_jnt
     400218: waist_jnt
-    7400000: PatriotV_Backhand
+    7400000: PatriotV_GrebadeToss
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -239,10 +239,10 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     clipAnimations:
-    - name: PatriotV_Backhand
+    - name: PatriotV_GrebadeToss
       takeName: Take 001
-      firstFrame: 1
-      lastFrame: 22
+      firstFrame: 2
+      lastFrame: 42
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
