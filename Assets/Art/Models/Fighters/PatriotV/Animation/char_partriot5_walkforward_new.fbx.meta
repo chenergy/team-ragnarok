@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1dc19bfffe130044cbc55de717c08fc6
+guid: b97cfda4efd2f7a4f9992dc6d4849c00
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -223,7 +223,7 @@ ModelImporter:
     400214: root_jnt
     400216: torso_jnt
     400218: waist_jnt
-    7400000: PatriotV_Unload
+    7400000: PatriotV_walkforward_new
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -239,10 +239,10 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     clipAnimations:
-    - name: PatriotV_Unload
+    - name: PatriotV_walkforward_new
       takeName: Take 001
-      firstFrame: 2
-      lastFrame: 92
+      firstFrame: 1
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
