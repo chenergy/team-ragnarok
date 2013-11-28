@@ -224,6 +224,7 @@ ModelImporter:
     400216: torso_jnt
     400218: waist_jnt
     7400000: PatriotV_KnockDown
+    7400002: PatriotV_die
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -243,6 +244,27 @@ ModelImporter:
       takeName: Take 001
       firstFrame: 2
       lastFrame: 92
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: PatriotV_die
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 53
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
