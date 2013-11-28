@@ -65,7 +65,7 @@ namespace FightGame
 			this.currentAttack		= null;
 			this.cur_hp				= 100.0f;
 			this.max_hp				= 100.0f;
-			this.cur_meter			= 100.0f;
+			this.cur_meter			= 0.0f;
 			this.max_meter			= 100.0f;
 			this.status				= null;
 			this.hurtLocation		= Location.NONE;

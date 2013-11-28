@@ -82,5 +82,8 @@ namespace FightGame{
 			this.AddInstruction(raven5);
 			
 		}
+		public override void SpecialExecute(){
+			this.attackOwner.cur_meter--;	
+		}
 	}
 }
