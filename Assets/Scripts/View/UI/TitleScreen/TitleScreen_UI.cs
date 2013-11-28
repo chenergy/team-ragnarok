@@ -20,6 +20,8 @@ public class TitleScreen_UI : MonoBehaviour {
 	public int lx = 577,ly=94;
 	public float lscale = 0.61f;
 	public AudioSource selectSound,moveCursorSound;
+	public GameObject fadeQuad;
+	bool fadingOut=false;
 	// Use this for initialization
 	void Start ()
 	{
@@ -29,8 +31,27 @@ public class TitleScreen_UI : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
+		if(Input.GetKeyDown(KeyCode.JoystickButton7))
+		{
+			StartCoroutine(StartGame());
+		}
+	}
 	
+	IEnumerator StartGame()
+	{
+		fadingOut=true;
+		float timer=0;
+		titleTimer = titleTime;
+		while(timer<1.2f)
+		{
+			fadeQuad.renderer.material.color = Color.Lerp(fadeQuad.renderer.material.color,Color.white,timer);
+			timer+=Time.deltaTime*2f;
+			titleTime-= Time.deltaTime*2f;
+			yield return null;
+		}
+		LoadGame(2);
 	}
 	
 	void OnGUI() 
@@ -45,11 +66,13 @@ public class TitleScreen_UI : MonoBehaviour {
 			case titleState.START:
 				if (Time.time > 6.5f)
 				{
-				
-					if(DrawStart(aspectH,aspectW,start_offX,start_offY,menuItem_GUIstyle))//|| Input.anyKey)
+					if(!fadingOut)
 					{
-						selectSound.PlayOneShot(selectSound.clip);
-						LoadMenu();
+						if(DrawStart(aspectH,aspectW,start_offX,start_offY,menuItem_GUIstyle))
+						{
+							LoadGame(2);
+							//LoadMenu();
+						}
 					}
 				}
 				DrawBlackOverlay( aspectH, aspectW, Black_Texture,blackfadeTime);
@@ -96,6 +119,7 @@ public class TitleScreen_UI : MonoBehaviour {
 	
 	void LoadMenu()
 	{
+		selectSound.PlayOneShot(selectSound.clip);
 		Debug.Log("Load Main Menu");
 		state = titleState.MENU;
 		Debug.Log(state);
@@ -115,9 +139,11 @@ public class TitleScreen_UI : MonoBehaviour {
 		
 		if (Time.time > titleTime)
 		{
+			if(!fadingOut)
 			titleTimer+=Time.deltaTime;
 		
 			//title TExture
+			if(!fadingOut)
 			GUI.DrawTexture(
 				new Rect(
 					offX * aspectW,
@@ -127,7 +153,10 @@ public class TitleScreen_UI : MonoBehaviour {
 				GameTitle_Texture,ScaleMode.StretchToFill,true,0);
 			
 			//fade int Title Texture
-			GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b, Mathf.Lerp(1.0f,0,titleTimer*0.5f));
+			if(!fadingOut)
+				GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b, Mathf.Lerp(1.0f,0,titleTimer*0.5f));
+			else
+				GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b, Mathf.Lerp(0,1.0f,titleTimer*0.5f));
 			GUI.DrawTexture(
 				new Rect(
 					offX * aspectW,
