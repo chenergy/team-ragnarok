@@ -105,8 +105,10 @@ public class TitleScreen_UI : MonoBehaviour {
 	
 	void DrawTitle(float aspectH, float aspectW, Texture2D texture,int offX,int offY,int lX, int lY)
 	{
-		const int imageW = 620;
-		const int imageH = 270;
+		//const int imageW = 620;
+		//const int imageH = 270;
+		int imageW = GameTitle_Texture.width;
+		int imageH = GameTitle_Texture.height;
 		
 		float rectWidth 			= (imageW*aspectW);
 		float rectHeight 			= (imageH*aspectH);
@@ -134,7 +136,7 @@ public class TitleScreen_UI : MonoBehaviour {
 					rectHeight),
 				whiteTitle,ScaleMode.StretchToFill,true,0);
 			GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b, 1.0f);
-			
+			/*
 			if(Time.time > lightingTime)
 			{
 				GUI.DrawTexture(
@@ -145,7 +147,7 @@ public class TitleScreen_UI : MonoBehaviour {
 					lighting.height * aspectH* lscale),
 				lighting,ScaleMode.StretchToFill,true,0);
 			}
-			
+			*/
 		}
 		
 		

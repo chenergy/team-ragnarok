@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: aa9b779e37535c54997b0556d24dcac3
+=======
+guid: caeb8f8deb04a3b409a3b6d5d36511de
+>>>>>>> origin/dev
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -223,7 +227,11 @@ ModelImporter:
     400214: root_jnt
     400216: torso_jnt
     400218: waist_jnt
+<<<<<<< HEAD
     7400000: PatriotV_victory2
+=======
+    7400000: Take 001
+>>>>>>> origin/dev
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -238,6 +246,7 @@ ModelImporter:
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
+<<<<<<< HEAD
     clipAnimations:
     - name: PatriotV_victory2
       takeName: Take 001
@@ -260,6 +269,9 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       transformMask: []
+=======
+    clipAnimations: []
+>>>>>>> origin/dev
     isReadable: 1
   meshes:
     lODScreenPercentages: []

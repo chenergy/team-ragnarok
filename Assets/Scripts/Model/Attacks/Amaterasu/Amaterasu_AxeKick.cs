@@ -9,18 +9,17 @@ namespace FightGame
 	{	
 		public Amaterasu_AxeKick(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner)
 		{
-			JointHitBoxInstruction hitbox1 = new JointHitBoxInstruction (
-				                                 "r_knee_jnt", 				
-				                                 attackOwner, 					// fighter
-				                                 1.50f, 							// radius
-				                                 2.0f,							// damage
-				                                 0.2f, 							// startTime
-				                                 0.4f,  							// endTime
-				                                 new Vector3 (0.0f, 0.0f, 0.0f), 	// offset
-				                                 new Vector3 (0.05f, 0.0f, 0.0f)
-			                                 );
-			hitbox1.onStartSound = GameManager.Sounds.Ama_AxeKick;
-			this.AddInstruction(hitbox1);
+			
+			this.AddInstruction(new JointHitBoxInstruction(
+				"r_knee_jnt", 				
+				attackOwner, 					// fighter
+				1.50f, 							// radius
+				2.0f,							// damage
+				0.2f, 							// startTime
+				0.4f,  							// endTime
+				new Vector3(0.0f, 0.0f, 0.0f), 	// offset
+				new Vector3(0.05f, 0.0f, 0.0f)
+				));		
 			
 			this.AddInstruction(new JointHitBoxInstruction(
 				"l_ball_jnt", 				
@@ -64,10 +63,9 @@ namespace FightGame
 				new Vector3(0.0f, 0.0f, 0.0f), 	// offset
 				new Vector3(0.0f, 0.0f, 0.0f)
 				));
+				
 			recoilStrength = 1.0f;
 			knockbackStrength = 10.0f;
-			//missile1.onCollisionSound = GameManager.Sounds.Sheep;
-			//missile1.onStartSound = GameManager.Sounds.HeavyMissile;
 		}
 		
 	}
