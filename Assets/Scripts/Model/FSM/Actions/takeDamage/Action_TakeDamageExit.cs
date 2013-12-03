@@ -15,6 +15,10 @@ namespace FSM
 			fighter.globalActionTimer = 0.0f;
 
 			gobj.animation.Stop();
+			
+			//this.gobj.animation[this.animationNameMap[FighterAnimation.IDLE]].AddMixingTransform(this.joints["master_amaterasu_ctr"]);
+			if (fighter.name == "Amaterasu")
+				fighter.joints["master_amaterasu_ctr"].transform.localRotation = Quaternion.identity;
 		}
 	}
 }
