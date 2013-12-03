@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: ceb4d3c26c978cc48b75c01fb8aa63f7
+=======
 guid: 1dc19bfffe130044cbc55de717c08fc6
+>>>>>>> origin/dev
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -223,7 +227,11 @@ ModelImporter:
     400214: root_jnt
     400216: torso_jnt
     400218: waist_jnt
+<<<<<<< HEAD
+    7400000: PatriotV_Unload
+=======
     7400000: Take 001
+>>>>>>> origin/dev
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -238,7 +246,32 @@ ModelImporter:
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
+<<<<<<< HEAD
+    clipAnimations:
+    - name: PatriotV_Unload
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 92
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+=======
     clipAnimations: []
+>>>>>>> origin/dev
     isReadable: 1
   meshes:
     lODScreenPercentages: []
