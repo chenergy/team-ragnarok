@@ -7,10 +7,11 @@ using FightGame;
 namespace FightGame{
 	public class PatriotV_Unload : Attack_Melee {
 		public PatriotV_Unload(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner){
+			
 			//1
 			this.AddInstruction(
 				new JointHitBoxInstruction(
-					"FK_L_hand_jnt", 					// joint
+					"FK_L_hand_jnt", 				// joint
 					attackOwner, 					// fighter
 					1.0f, 							// radius
 					2.0f,							// damage
@@ -20,6 +21,7 @@ namespace FightGame{
 					new Vector3( 0.0f, 0, 0 )		// movement				
 				)
 			);
+			
 			//2
 			this.AddInstruction(
 				new JointHitBoxInstruction(
@@ -28,9 +30,9 @@ namespace FightGame{
 					1.0f, 							// radius
 					2.0f,							// damage
 					1.2f, 							// startTime
-					1.5f,  							// endTime
+					1.4f,  							// endTime
 					Vector3.zero,					// offset
-					new Vector3( 0.0f, 0, 0 )		// movement				
+					new Vector3( 0.25f, 0, 0 )		// movement				
 				)
 			);
 			
@@ -51,18 +53,20 @@ namespace FightGame{
 			//4
 			this.AddInstruction(
 				new JointHitBoxInstruction(
-					"FK_R_hand_jnt", 					// joint
+					"FK_R_hand_jnt", 				// joint
 					attackOwner, 					// fighter
 					1.0f, 							// radius
 					2.0f,							// damage
 					3.1f, 							// startTime
 					3.6f,  							// endTime
-					new Vector3(1,0,0),					// offset
-					new Vector3( 0.0f, 0, 0 ),		// movement	
+					new Vector3(1,0,0),				// offset
+					new Vector3( 0.01f, 0, 0 ),		// movement	
 					true							//knockdown
 				)
-			);
-			
-		}		
+			);						
+		}
+		public override void SpecialExecute(){
+			this.attackOwner.cur_meter--;	
+		}
 	}
 }

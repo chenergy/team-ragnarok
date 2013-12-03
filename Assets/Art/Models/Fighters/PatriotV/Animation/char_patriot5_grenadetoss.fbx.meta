@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: b8395fc207d1bb54d876a4501479d127
-=======
 guid: 7a7bb9989e2675f4a9f3fbd15eaa2b82
->>>>>>> origin/dev
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -227,11 +223,7 @@ ModelImporter:
     400214: root_jnt
     400216: torso_jnt
     400218: waist_jnt
-<<<<<<< HEAD
-    7400000: PatriotV_GrebadeToss
-=======
-    7400000: Take 001
->>>>>>> origin/dev
+    7400000: PatriotV_GrenadeToss
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -246,9 +238,8 @@ ModelImporter:
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
-<<<<<<< HEAD
     clipAnimations:
-    - name: PatriotV_GrebadeToss
+    - name: PatriotV_GrenadeToss
       takeName: Take 001
       firstFrame: 2
       lastFrame: 42
@@ -269,9 +260,6 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       transformMask: []
-=======
-    clipAnimations: []
->>>>>>> origin/dev
     isReadable: 1
   meshes:
     lODScreenPercentages: []

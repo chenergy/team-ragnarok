@@ -16,7 +16,21 @@ namespace FightGame{
 					0.5f,
 					0.8f,
 					Vector3.zero,
-					new Vector3(0.5f,0f,0),
+					new Vector3(0.0f,0.0f,0),
+					true
+				)
+			);				
+			
+			this.AddInstruction(
+				new JointHitBoxInstruction(
+					"FK_L_hand_jnt",
+					attackOwner,
+					0.0f,
+					0.0f,
+					0.4f,
+					0.6f,
+					Vector3.zero,
+					new Vector3(0.35f,0f,0),
 					true
 				)
 			);
