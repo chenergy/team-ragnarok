@@ -59,6 +59,28 @@ public class GameSounds{
 	public AudioClip Odin_ThrustLunge;
 	public AudioClip Odin_WalkBackward;
 	public AudioClip Odin_WalkForward;
+
+	// Odin
+	public AudioClip PatriotV_Block;
+	public AudioClip PatriotV_Death;
+	public AudioClip PatriotV_FlinchDown;
+	public AudioClip PatriotV_FlinchUp;
+	public AudioClip PatriotV_Idle;
+	public AudioClip PatriotV_KnockDown;
+	public AudioClip PatriotV_WalkBackward;
+	public AudioClip PatriotV_WalkForward;
+	public AudioClip PatriotV_Victory;
+	public AudioClip PatriotV_Backhand;
+	public AudioClip PatriotV_Claws;
+	public AudioClip PatriotV_Counter;
+	public AudioClip PatriotV_ExecutionDrop;
+	public AudioClip PatriotV_ExplosivePunch;
+	public AudioClip PatriotV_FreedomSpins;
+	public AudioClip PatriotV_GrenadeToss;
+	public AudioClip PatriotV_GutBuster;
+	public AudioClip PatriotV_Jab;
+	public AudioClip PatriotV_Unload;
+	public AudioClip PatriotV_Uppercut;
 }
 
 public class SoundManager : MonoBehaviour

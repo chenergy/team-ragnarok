@@ -27,7 +27,7 @@ namespace FSM
 				GameManager.PlayAudio (GameManager.Sounds.Odin_KnockDown, 1.0f);
 				break;
 			case "PatriotV":
-				//GameManager.PlayAudio (GameManager.Sounds.PatriotV_Death, 1.0f);
+				GameManager.PlayAudio (GameManager.Sounds.PatriotV_KnockDown, 1.0f);
 				break;
 			default:
 				break;

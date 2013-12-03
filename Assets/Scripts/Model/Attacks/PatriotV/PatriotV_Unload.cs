@@ -9,18 +9,18 @@ namespace FightGame{
 		public PatriotV_Unload(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner){
 			
 			//1
-			this.AddInstruction(
-				new JointHitBoxInstruction(
-					"FK_L_hand_jnt", 				// joint
-					attackOwner, 					// fighter
-					1.0f, 							// radius
-					2.0f,							// damage
-					0.35f, 							// startTime
-					0.6f,  							// endTime
-					Vector3.zero,					// offset
-					new Vector3( 0.0f, 0, 0 )		// movement				
-				)
-			);
+			JointHitBoxInstruction attack1 = new JointHitBoxInstruction (
+				                                 "FK_L_hand_jnt", 				// joint
+				                                 attackOwner, 					// fighter
+				                                 1.0f, 							// radius
+				                                 2.0f,							// damage
+				                                 0.35f, 							// startTime
+				                                 0.6f,  							// endTime
+				                                 Vector3.zero,					// offset
+				                                 new Vector3 (0.0f, 0, 0)		// movement				
+			                                 );
+			attack1.onStartSound = GameManager.Sounds.PatriotV_Unload;
+			this.AddInstruction (attack1);
 			
 			//2
 			this.AddInstruction(

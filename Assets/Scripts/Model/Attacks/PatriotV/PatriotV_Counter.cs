@@ -10,20 +10,19 @@ namespace FightGame{
 			//brieft invincible
 			//this.buff = new Buff_TemporaryInvincible(1.0f,attackOwner,"TemporaryInvincible",0f);
 			
-			this.AddInstruction(
-				new JointHitBoxInstruction(
-					"FK_R_hand_jnt",
-					attackOwner,
-					1.0f,
-					2.0f,
-					0.9f,
-					1.2f,
-					Vector3.zero,								//offset
-					new Vector3(0.0f,0.0f,0.0f)				//movement
-				)
-			);
+			JointHitBoxInstruction attack1 = new JointHitBoxInstruction (
+				                                 "FK_R_hand_jnt",
+				                                 attackOwner,
+				                                 1.0f,
+				                                 2.0f,
+				                                 0.9f,
+				                                 1.2f,
+				                                 Vector3.zero,								//offset
+				                                 new Vector3 (0.0f, 0.0f, 0.0f)				//movement
+			                                 );
 			
-			
+			attack1.onStartSound = GameManager.Sounds.PatriotV_Counter;
+			this.AddInstruction (attack1);
 		}		
 	}
 }

@@ -395,7 +395,7 @@ namespace FightGame
 						GameManager.PlayAudio (GameManager.Sounds.Odin_FlinchUp, 1.0f);
 						break;
 					case "PatriotV":
-						//GameManager.PlayAudio (GameManager.Sounds.PatriotV_Death, 1.0f);
+						GameManager.PlayAudio (GameManager.Sounds.PatriotV_FlinchUp, 1.0f);
 						break;
 					default:
 						break;
@@ -443,7 +443,7 @@ namespace FightGame
 						GameManager.PlayAudio (GameManager.Sounds.Odin_Block, 1.0f);
 						break;
 					case "PatriotV":
-						//GameManager.PlayAudio (GameManager.Sounds.PatriotV_Death, 1.0f);
+						GameManager.PlayAudio (GameManager.Sounds.PatriotV_Block, 1.0f);
 						break;
 					default:
 						break;

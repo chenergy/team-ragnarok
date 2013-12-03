@@ -37,7 +37,7 @@ namespace FSM
 					GameManager.PlayAudioLoop (GameManager.Sounds.Odin_WalkForward, moveSpeed);
 					break;
 				case "PatriotV":
-					//GameManager.PlayAudioLoop (GameManager.Sounds.PatriotV_Death, 1.0f);
+					GameManager.PlayAudioLoop (GameManager.Sounds.PatriotV_WalkForward, 1.0f);
 					break;
 				default:
 					break;
@@ -61,7 +61,7 @@ namespace FSM
 					GameManager.PlayAudioLoop (GameManager.Sounds.Odin_WalkBackward, moveSpeed);
 					break;
 				case "PatriotV":
-					//GameManager.PlayAudioLoop (GameManager.Sounds.PatriotV_Death, 1.0f);
+					GameManager.PlayAudioLoop (GameManager.Sounds.PatriotV_WalkBackward, 1.0f);
 					break;
 				default:
 					break;
