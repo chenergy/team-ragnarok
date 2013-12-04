@@ -68,11 +68,12 @@ namespace FightGame
 			setFocusTarget(p1.Fighter,p2.Fighter);
 			
 			if( 
+				( 
 					( p1.Fighter.PlayingSpecialAttack()&& !p2.Fighter.PlayingSpecialAttack())
 					||
 					( !p1.Fighter.PlayingSpecialAttack()&& p2.Fighter.PlayingSpecialAttack()) 
-					&& 
-					zoomCamera
+				)
+				&& zoomCamera	
 			  )	
 			{
 				//condition: if either p1 or p2, but not both play special and zoomCamera is true
@@ -114,7 +115,6 @@ namespace FightGame
 				slowRate = fighter1.slowRate;
 				slowDuration = fighter1.slowDuration;
 				slowMoStart = fighter1.slowMoStart;
-				
 			}
 			else if(fighter2.PlayingSpecialAttack() && !fighter1.PlayingSpecialAttack()){
 				dir = fighter2.GlobalForwardVector.x;
@@ -147,6 +147,9 @@ namespace FightGame
 			if(localTime >= zoomTime){
 				zoomCamera = false;
 				localTime =0;
+				slowDuration = 0;
+				slowRate = 1;
+				slowMoStart = 0;
 			}
 		}
 		void resetZoomCamera(){
