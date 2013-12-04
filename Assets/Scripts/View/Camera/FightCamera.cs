@@ -29,6 +29,7 @@ namespace FightGame
 		private float	slowMoStart;
 		private float	slowDuration;
 		private float	slowRate;
+		
 		private float	dir; //direction depend on which player 
 		//
 		private float cameraX;
@@ -120,6 +121,7 @@ namespace FightGame
 				slowRate = fighter1.slowRate;
 				slowDuration = fighter1.slowDuration;
 				slowMoStart = fighter1.slowMoStart;
+				
 			}
 			else if(fighter2.PlayingSpecialAttack() && !fighter1.PlayingSpecialAttack()){
 				dir = fighter2.GlobalForwardVector.x;
@@ -130,6 +132,7 @@ namespace FightGame
 				slowRate = fighter2.slowRate;
 				slowDuration = fighter2.slowDuration;
 				slowMoStart = fighter2.slowMoStart;
+				
 			}
 		}
 		
@@ -145,7 +148,7 @@ namespace FightGame
 				//Debug.Log("Slow Mo starts");
 				Time.timeScale = slowRate;
 			}
-			if( (localTime - slowMoStart) >= slowDuration ){
+			if( (localTime - slowMoStart) >= slowDuration){
 				//Debug.Log ("Slow Mo ends");
 				Time.timeScale = 1;
 			}

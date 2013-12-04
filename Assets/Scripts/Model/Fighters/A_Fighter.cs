@@ -34,6 +34,7 @@ namespace FightGame
 		public float							slowRate;
 		public float							slowDuration;
 		public float							slowMoStart;
+		
 		//public	bool							specialEffect;
 		
 		private	int								onHitTimer;
