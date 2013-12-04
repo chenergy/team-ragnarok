@@ -11,7 +11,7 @@ namespace FightGame{
 				                                 "FK_L_hand_jnt",
 				                                 attackOwner,
 				                                 1.0f,
-				                                 2.0f,
+				                                 7.0f,
 				                                 0.3f,
 				                                 0.5f,
 				                                 Vector3.zero,								//offset

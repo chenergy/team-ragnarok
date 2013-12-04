@@ -14,7 +14,7 @@ namespace FightGame{
 				                                      7.0f, 							// speed
 				                                      attackOwner, 					// A_fighter
 				                                      2.0f, 							// radius
-				                                      2.0f, 							// damage
+				                                      4.0f, 							// damage
 				                                      0.1f, 							// startTime
 				                                      0.7f,							// endTime
 				                                      new Vector3 (-3.0f, 0.2f, 0.0f),	// offset
@@ -30,7 +30,7 @@ namespace FightGame{
 				7.0f, 							// speed
 				attackOwner, 					// A_fighter
 				2.0f, 							// radius
-				2.0f, 							// damage
+				4.0f, 							// damage
 				0.2f, 							// startTime
 				0.8f,							// endTime
 				new Vector3(-3.0f, 0.2f, 0.0f),	// offset
@@ -43,7 +43,7 @@ namespace FightGame{
 				7.0f, 							// speed
 				attackOwner, 					// A_fighter
 				2.0f, 							// radius
-				2.0f, 							// damage
+				4.0f, 							// damage
 				0.3f, 							// startTime
 				0.9f,							// endTime
 				new Vector3(-3.0f, 0.2f, 0.0f),	// offset

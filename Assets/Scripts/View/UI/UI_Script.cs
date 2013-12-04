@@ -159,6 +159,19 @@ public class UI_Script : MonoBehaviour
 		{
 			koTimer+=Time.deltaTime; 
 		}
+		else if (playState == playStates.CHOOSE)
+		{
+			if(Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Joystick2Button0))
+			{
+				RestartLevel();
+			}
+			
+			else if(Input.GetKeyDown(KeyCode.JoystickButton6) || Input.GetKeyDown(KeyCode.Joystick2Button6))
+			{
+				LoadCharSelect();
+			}
+			
+		}
 		
 		// ROUND TIMER
 		if(created)
@@ -536,17 +549,15 @@ public class UI_Script : MonoBehaviour
 					//InitPlayers();
 					//GameManager.CreateFightCamera();
 			
-					Application.LoadLevel("2P_CharSelect");
+					LoadCharSelect();
 										
 					
 				}
 				
 				if (GUI.Button(new Rect(Screen.width/2 - 100, Screen.height/2 + 60, 200, 100), "Restart"))
 				{
-					
-					InitPlayers();
-					GameManager.P1.roundsWon = 0;
-					GameManager.P2.roundsWon = 0;
+					RestartLevel();
+
 					//InitPlayers();
 					//created = false;
 					//p1Pick = false;
@@ -556,10 +567,12 @@ public class UI_Script : MonoBehaviour
 				}
 			}
 			
+			// Hitbox view Toggle
+			/*
 			this.hitboxOn = GUI.Toggle(new Rect(Screen.width * 0.05f, Screen.height * 0.25f, 130, 20), hitboxOn, "Show HitBoxes");
 			this.hurtboxOn = GUI.Toggle(new Rect(Screen.width * 0.05f, Screen.height * 0.25f + 20, 130, 20), hurtboxOn, "Show HurtBoxes");
 			this.controlsOn = GUI.Toggle(new Rect(Screen.width * 0.05f, Screen.height * 0.25f + 40, 130, 20), controlsOn, "Show Controls");
-			
+			*/
 
 			
 			
@@ -594,6 +607,20 @@ public class UI_Script : MonoBehaviour
 		}
 		*/
     }
+	
+	
+	void RestartLevel()
+	{
+		InitPlayers();
+		GameManager.P1.roundsWon = 0;
+		GameManager.P2.roundsWon = 0;
+	}
+	
+	void LoadCharSelect()
+	{
+		Application.LoadLevel("2P_CharSelect");
+	}
+	
 	
 	//Hieu add
 	void PickFighter()

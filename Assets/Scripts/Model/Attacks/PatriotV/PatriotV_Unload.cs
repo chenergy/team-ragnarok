@@ -13,7 +13,7 @@ namespace FightGame{
 				                                 "FK_L_hand_jnt", 				// joint
 				                                 attackOwner, 					// fighter
 				                                 1.0f, 							// radius
-				                                 2.0f,							// damage
+				                                 4.0f,							// damage
 				                                 0.35f, 							// startTime
 				                                 0.6f,  							// endTime
 				                                 Vector3.zero,					// offset
@@ -28,7 +28,7 @@ namespace FightGame{
 					"FK_R_hand_jnt",
 					attackOwner, 					// fighter
 					1.0f, 							// radius
-					2.0f,							// damage
+					4.0f,							// damage
 					1.2f, 							// startTime
 					1.4f,  							// endTime
 					Vector3.zero,					// offset
@@ -42,7 +42,7 @@ namespace FightGame{
 					"FK_L_hand_jnt", 					
 					attackOwner, 					// fighter
 					1.0f, 							// radius
-					2.0f,							// damage
+					4.0f,							// damage
 					2.0f, 							// startTime
 					2.6f,  							// endTime
 					Vector3.zero,					// offset
@@ -56,7 +56,7 @@ namespace FightGame{
 					"FK_R_hand_jnt", 				// joint
 					attackOwner, 					// fighter
 					1.0f, 							// radius
-					2.0f,							// damage
+					4.0f,							// damage
 					2.9f, 							// startTime
 					3.6f,  							// endTime
 					new Vector3(1,0,0),				// offset
