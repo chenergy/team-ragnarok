@@ -137,11 +137,11 @@ namespace FightGame
 			
 			localTime+= Time.deltaTime;
 			if(localTime>=slowMoStart){
-				Debug.Log("Slow Mo starts");
+				//Debug.Log("Slow Mo starts");
 				Time.timeScale = slowRate;
 			}
 			if( (localTime - slowMoStart) >= slowDuration ){
-				Debug.Log ("Slow Mo ends");
+				//Debug.Log ("Slow Mo ends");
 				Time.timeScale = 1;
 			}
 			if(localTime >= zoomTime){
