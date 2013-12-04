@@ -30,19 +30,23 @@ private Rect pauseAreaNormalize;
 		Time.timeScale = 1;
 		AudioListener.volume = 1;
 		Screen.showCursor = false;
+		
+			pauseAreaNormalize =
+		new Rect(pauseArea.x * Screen.width - (pauseArea.width * 0.5f),
+			pauseArea.y * Screen.height - (pauseArea.height * 0.5f),
+			pauseArea.width, pauseArea.height);
+		
 	
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{		
-		pauseAreaNormalize =
-			new Rect(pauseArea.x * Screen.width - (pauseArea.width * 0.5f),
-				pauseArea.y * Screen.height - (pauseArea.height * 0.5f),
-				pauseArea.width, pauseArea.height);
+
 
 		//check if pause button (escape key) is pressed
-		if(Input.GetKeyDown("escape"))
+		//if(Input.GetKeyDown("escape") || Input.GetKeyDown(KeyCode.JoystickButton0))
+		if(Input.GetKeyDown(KeyCode.A))
 		{
 			//check if game is already paused		
 			if(pauseEnabled == true)

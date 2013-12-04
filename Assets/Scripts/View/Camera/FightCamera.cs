@@ -29,6 +29,7 @@ namespace FightGame
 		private float	slowMoStart;
 		private float	slowDuration;
 		private float	slowRate;
+		
 		private float	dir; //direction depend on which player 
 		//
 		private float cameraX;
@@ -37,6 +38,8 @@ namespace FightGame
 		
 		private float minZDistance;
 		private float maxZDistance;
+		
+		private Vector3 smoothVelocity,smoothVelocity2;
 		
 		public FightCamera ( Player p1, Player p2 )
 		{
@@ -62,6 +65,7 @@ namespace FightGame
 			this.p1Position = (p1.Fighter != null) ? this.p1.Fighter.gobj.transform.position : this.camera.transform.position;
 			this.p2Position = (p2.Fighter != null) ? this.p2.Fighter.gobj.transform.position : this.camera.transform.position;
 			this.centerPosition = Vector3.Lerp(this.centerPosition, p1Position + ((p2Position - p1Position) * 0.5f), Time.deltaTime * 5.0f);
+			//this.centerPosition = Vector3.SmoothDamp(this.centerPosition,p1Position + ((p2Position - p1Position) * 0.5f),ref smoothVelocity2,.3f);
 			float yOffset = (Mathf.Abs(Mathf.Clamp(this.cameraZ, maxZDistance, minZDistance) - minZDistance)) * 0.5f + this.yPositionOffset;
 			
 			//Hieu add
@@ -91,8 +95,10 @@ namespace FightGame
 				Vector3 cameraPosition = new Vector3( this.cameraX, this.cameraY, this.cameraZ);
 				this.camera.transform.LookAt(new Vector3(this.cameraX, this.centerPosition.y + this.yTargetOffset, 0.0f));
 				
-				if (cameraPosition.x > GameManager.LeftBoundary && cameraPosition.x < GameManager.RightBoundary){
+				if (cameraPosition.x > GameManager.LeftBoundary && cameraPosition.x < GameManager.RightBoundary)
+				{
 					this.camera.transform.position = Vector3.Lerp(this.camera.transform.position, cameraPosition, Time.deltaTime * 3.0f);
+					//this.camera.transform.position = Vector3.SmoothDamp(this.camera.transform.position,cameraPosition,ref smoothVelocity,.3f);
 				}
 			}
 		}
@@ -115,6 +121,7 @@ namespace FightGame
 				slowRate = fighter1.slowRate;
 				slowDuration = fighter1.slowDuration;
 				slowMoStart = fighter1.slowMoStart;
+				
 			}
 			else if(fighter2.PlayingSpecialAttack() && !fighter1.PlayingSpecialAttack()){
 				dir = fighter2.GlobalForwardVector.x;
@@ -125,6 +132,7 @@ namespace FightGame
 				slowRate = fighter2.slowRate;
 				slowDuration = fighter2.slowDuration;
 				slowMoStart = fighter2.slowMoStart;
+				
 			}
 		}
 		
@@ -140,7 +148,7 @@ namespace FightGame
 				//Debug.Log("Slow Mo starts");
 				Time.timeScale = slowRate;
 			}
-			if( (localTime - slowMoStart) >= slowDuration ){
+			if( (localTime - slowMoStart) >= slowDuration){
 				//Debug.Log ("Slow Mo ends");
 				Time.timeScale = 1;
 			}
