@@ -22,6 +22,7 @@ public class TitleScreen_UI : MonoBehaviour {
 	public AudioSource selectSound,moveCursorSound;
 	public GameObject fadeQuad;
 	bool fadingOut=false;
+	bool titleStarted = false;
 	// Use this for initialization
 	void Start ()
 	{
@@ -133,12 +134,17 @@ public class TitleScreen_UI : MonoBehaviour {
 		//const int imageH = 270;
 		int imageW = GameTitle_Texture.width;
 		int imageH = GameTitle_Texture.height;
-		
+
 		float rectWidth 			= (imageW*aspectW);
 		float rectHeight 			= (imageH*aspectH);
 		
 		if (Time.time > titleTime)
 		{
+			if (!titleStarted) {
+				selectSound.PlayOneShot(selectSound.clip);
+				titleStarted = true;
+			}
+
 			if(!fadingOut)
 			titleTimer+=Time.deltaTime;
 		
@@ -246,7 +252,7 @@ public class TitleScreen_UI : MonoBehaviour {
 		const int imageW = 313;
 		const int imageH = 81;
 		const int fontSize = 28;
-		
+
 		float rectWidth 			= (imageW*aspectW);
 		float rectHeight 			= (imageH*aspectH);
 		style.fontSize = (int)(fontSize * aspectH);
