@@ -49,8 +49,9 @@ public class FighterInput : MonoBehaviour
 	public Vector3			disTargettoCamera;
 	public float			zoomTime;
 	public float			slowMoStart;
-	public float			slowRate;
+	public float			slowRate = 1f;
 	public float			slowDuration;
+
 	
 	[HideInInspector]
 	public Dictionary<FighterAnimation, string> animationNameMap;
