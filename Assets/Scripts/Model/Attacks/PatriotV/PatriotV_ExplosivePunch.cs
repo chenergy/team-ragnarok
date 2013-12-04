@@ -11,7 +11,7 @@ namespace FightGame{
 				                                 "FK_R_hand_jnt",
 				                                 attackOwner,
 				                                 1.0f,
-				                                 2.0f,
+				                                 7.0f,
 				                                 0.5f,
 				                                 0.8f,
 				                                 new Vector3 (0.2f, 0f, 0),

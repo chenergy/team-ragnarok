@@ -75,7 +75,7 @@ namespace FightGame
 			this.currentAttack		= null;
 			this.cur_hp				= 100.0f;
 			this.max_hp				= 100.0f;
-			this.cur_meter			= 100.0f;
+			this.cur_meter			= 0.0f;
 			this.max_meter			= 100.0f;
 			this.status				= null;
 			this.hurtLocation		= Location.NONE;
@@ -553,6 +553,8 @@ namespace FightGame
 			S_block.addTransition(T_walk, "walk");
 			S_block.addTransition(T_death, "death");
 			S_block.addTransition(T_block,"block");
+			S_block.addTransition(T_takeDamage,"takeDamage");
+			S_block.addTransition(T_knockDown,"knockDown");
 			//S_block.addTransition(T_takeDamage,"takeDamage");
 			
 			S_knockDown.addTransition(T_idle,"idle");

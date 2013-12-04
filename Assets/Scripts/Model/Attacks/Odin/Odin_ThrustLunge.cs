@@ -12,7 +12,7 @@ namespace FightGame{
 				                                 "spear_endpoint_gobj", 		//joint
 				                                 attackOwner, 				//fighter
 				                                 1.0f, 						//radius
-				                                 1.0f, 						//damage
+				                                 2.0f, 						//damage
 				                                 0.2f, 						//start time 
 				                                 3.0f, 						//end time
 				                                 Vector3.zero, 				//offset
@@ -25,7 +25,7 @@ namespace FightGame{
 				"spear_endpoint_gobj2", 	//joint
 				attackOwner, 				//fighter
 				1.0f, 						//radius
-				1.0f, 						//damage
+				2.0f, 						//damage
 				0.3f, 						//start time 
 				3.0f, 						//end time
 				Vector3.zero, 				//offset
@@ -35,7 +35,7 @@ namespace FightGame{
 				"spear_endpoint_gobj3", 	//joint
 				attackOwner, 				//fighter
 				1.0f, 						//radius
-				1.0f, 						//damage
+				2.0f, 						//damage
 				0.3f, 						//start time 
 				3.0f, 						//end time
 				Vector3.zero, 				//offset
@@ -45,7 +45,7 @@ namespace FightGame{
 				"spear_endpoint_gobj4", 	//joint
 				attackOwner, 				//fighter
 				1.0f, 						//radius
-				1.0f, 						//damage
+				2.0f, 						//damage
 				0.3f, 						//start time 
 				3.0f, 						//end time
 				Vector3.zero, 				//offset
