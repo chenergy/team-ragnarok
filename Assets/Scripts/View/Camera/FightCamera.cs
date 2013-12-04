@@ -26,6 +26,9 @@ namespace FightGame
 		private bool 	zoomCamera;
 		private float   zoomTime;
 		private float   localTime;
+		private float	slowMoStart;
+		private float	slowDuration;
+		private float	slowRate;
 		private float	dir; //direction depend on which player 
 		//
 		private float cameraX;
@@ -64,11 +67,17 @@ namespace FightGame
 			//Hieu add
 			setFocusTarget(p1.Fighter,p2.Fighter);
 			
-			if( (GameManager.P1.Fighter.PlayingSpecialAttack() || GameManager.P2.Fighter.PlayingSpecialAttack())
-				&& zoomCamera)	{
-				//condition: if either p1 or p2 play special and zoomCamera is true
-					//adjust camera here for dramatic effect....
-					
+			if( 
+					( p1.Fighter.PlayingSpecialAttack()&& !p2.Fighter.PlayingSpecialAttack())
+					||
+					( !p1.Fighter.PlayingSpecialAttack()&& p2.Fighter.PlayingSpecialAttack()) 
+					&& 
+					zoomCamera
+			  )	
+			{
+				//condition: if either p1 or p2, but not both play special and zoomCamera is true
+				//adjust camera here for dramatic effect....
+				
 					AdjustCameraFocus();
 					this.camera.transform.LookAt(focusPosition);
 			}
@@ -102,6 +111,10 @@ namespace FightGame
 				movePosition = fighter1.cameraTarget.transform.position;
 				distanceTargettoCamera = fighter1.disTargettoCamera;
 				zoomTime = fighter1.zoomTime;
+				slowRate = fighter1.slowRate;
+				slowDuration = fighter1.slowDuration;
+				slowMoStart = fighter1.slowMoStart;
+				
 			}
 			else if(fighter2.PlayingSpecialAttack() && !fighter1.PlayingSpecialAttack()){
 				dir = fighter2.GlobalForwardVector.x;
@@ -109,6 +122,9 @@ namespace FightGame
 				movePosition = fighter2.cameraTarget.transform.position;
 				distanceTargettoCamera = fighter2.disTargettoCamera;
 				zoomTime = fighter2.zoomTime;
+				slowRate = fighter2.slowRate;
+				slowDuration = fighter2.slowDuration;
+				slowMoStart = fighter2.slowMoStart;
 			}
 		}
 		
@@ -118,7 +134,16 @@ namespace FightGame
 			movePosition.y += distanceTargettoCamera.y;
 			movePosition.z += distanceTargettoCamera.z;
 			this.camera.transform.position = movePosition;
+			
 			localTime+= Time.deltaTime;
+			if(localTime>=slowMoStart){
+				Debug.Log("Slow Mo starts");
+				Time.timeScale = slowRate;
+			}
+			if( (localTime - slowMoStart) >= slowDuration ){
+				Debug.Log ("Slow Mo ends");
+				Time.timeScale = 1;
+			}
 			if(localTime >= zoomTime){
 				zoomCamera = false;
 				localTime =0;

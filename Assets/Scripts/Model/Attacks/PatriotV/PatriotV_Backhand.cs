@@ -8,7 +8,7 @@ namespace FightGame{
 	public class PatriotV_Backhand : Attack_Melee {
 		public PatriotV_Backhand(string animationName, A_Fighter attackOwner, float animationSpeed = 1.0f) : base(animationName, animationSpeed, attackOwner){
 			JointHitBoxInstruction attack1 = new JointHitBoxInstruction (
-				                                 "FK_R_hand_jnt",
+				                                 "FK_L_hand_jnt",
 				                                 attackOwner,
 				                                 1.0f,
 				                                 2.0f,

@@ -31,7 +31,9 @@ namespace FightGame
 		
 		//Hieu add for 'Counter' attack of PatriotV, need brief second of invincibility
 		public bool 							invincible;
-		
+		public float							slowRate;
+		public float							slowDuration;
+		public float							slowMoStart;
 		//public	bool							specialEffect;
 		
 		private	int								onHitTimer;
@@ -61,6 +63,9 @@ namespace FightGame
 			this.cameraTarget		= input.cameraTarget;
 			this.disTargettoCamera	= input.disTargettoCamera;
 			this.zoomTime			= input.zoomTime;
+			this.slowRate			= input.slowRate;
+			this.slowDuration		= input.slowDuration;
+			this.slowMoStart		= input.slowMoStart;
 			//
 			this.gobj 				= gobj;
 			this.playerNumber		= playerNumber;
@@ -69,7 +74,7 @@ namespace FightGame
 			this.currentAttack		= null;
 			this.cur_hp				= 100.0f;
 			this.max_hp				= 100.0f;
-			this.cur_meter			= 0.0f;
+			this.cur_meter			= 100.0f;
 			this.max_meter			= 100.0f;
 			this.status				= null;
 			this.hurtLocation		= Location.NONE;
@@ -485,6 +490,7 @@ namespace FightGame
 				}
 				
 				A_Fighter enemy = GameManager.GetOpponentPlayer(this.playerNumber).Fighter;
+				Debug.Log(enemy.name);
 				if(!enemy.PlayingSpecialAttack()){
 					//only increase meter for opponent when:
 					// 1/ attack landed, either got block or got hit

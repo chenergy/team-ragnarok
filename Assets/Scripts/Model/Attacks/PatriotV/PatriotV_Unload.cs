@@ -57,7 +57,7 @@ namespace FightGame{
 					attackOwner, 					// fighter
 					1.0f, 							// radius
 					2.0f,							// damage
-					3.1f, 							// startTime
+					2.9f, 							// startTime
 					3.6f,  							// endTime
 					new Vector3(1,0,0),				// offset
 					new Vector3( 0.01f, 0, 0 ),		// movement	
