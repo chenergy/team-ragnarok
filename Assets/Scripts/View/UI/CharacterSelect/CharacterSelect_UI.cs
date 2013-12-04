@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using FightGame;
 public class CharacterSelect_UI : MonoBehaviour {
 	
-	public AudioSource selectSound,moveCursor;
+	public AudioSource selectSound,moveCursor, cannotSelectSound;
 	public int portrait_offX = 337 , portrait_offY =353;
 	public int name_offX = 337 , name_offY =353;
 	public int selection_offX = 337 , selection_offY =353;
@@ -312,21 +312,21 @@ public class CharacterSelect_UI : MonoBehaviour {
 			if(Input.GetKeyDown(KeyCode.Joystick1Button0) ||  Input.GetKeyDown(KeyCode.C))
 			{
 				//check to make sure can't select same player
-				if(characters[(int)p1SelectLocation.y,(int)p1SelectLocation.x] != p2SelectedChar)
-				{
-					selectSound.Play();
-					p1SelectedChar = 	characters[(int)p1SelectLocation.y,(int)p1SelectLocation.x];
-					if(p1Gob==null)
-					{
+				if (characters [(int)p1SelectLocation.y, (int)p1SelectLocation.x] != p2SelectedChar) {
+					selectSound.Play ();
+					p1SelectedChar = characters [(int)p1SelectLocation.y, (int)p1SelectLocation.x];
+					if (p1Gob == null) {
 						print ("trying to load Resources/Fighters/CharacterSelect_" + p1SelectedChar);
-						p1Gob =  GameObject.Instantiate( Resources.Load("Fighters/CharacterSelect_" + p1SelectedChar, typeof(GameObject)),Vector3.up*20, Quaternion.Euler(0,90,0) ) as GameObject;
+						p1Gob = GameObject.Instantiate (Resources.Load ("Fighters/CharacterSelect_" + p1SelectedChar, typeof(GameObject)), Vector3.up * 20, Quaternion.Euler (0, 90, 0)) as GameObject;
 						if (p1SelectedChar == "Amaterasu" || p1SelectedChar == "Odin") {
 							GameObject level = GameObject.Instantiate (Resources.Load ("Levels/GodPlatform", typeof(GameObject)), p1ModelPosition, Quaternion.identity) as GameObject;
 						} else {
 							GameObject level = GameObject.Instantiate (Resources.Load ("Levels/MechPlatform", typeof(GameObject)), p1ModelPosition, Quaternion.identity) as GameObject;
 						}
 					}
-					Debug.Log("pressing button at " + p1SelectedChar);
+					Debug.Log ("pressing button at " + p1SelectedChar);
+				} else {
+					cannotSelectSound.Play ();
 				}
 			}
 			
@@ -407,6 +407,8 @@ public class CharacterSelect_UI : MonoBehaviour {
 							level.transform.localScale = new Vector3 (-1, 1, 1);
 						}
 					}
+				}else {
+					cannotSelectSound.Play ();
 				}
 				
 			}
